@@ -19,7 +19,7 @@ const CTASection = () => {
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-7xl mx-auto">
           {/* Subtitle */}
-          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 tracking-wide opacity-90 font-light">
+          <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 tracking-wide opacity-90 font-light italic">
             Crafting Spaces With<br />
             Soul
           </p>
