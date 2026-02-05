@@ -3,7 +3,7 @@ const CTASection = () => {
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
@@ -17,34 +17,34 @@ const CTASection = () => {
 
       {/* Main content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto">
+        <div className="text-center max-w-7xl mx-auto">
           {/* Subtitle */}
           <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 tracking-wide opacity-90 font-light">
-            Crafting Environments<br />
-            That Inspire
+            Crafting Spaces With<br />
+            Soul
           </p>
 
           {/* Main heading */}
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 sm:mb-12 leading-tight">
-            It's so <span className="italic font-light">Easy</span> to<br />
-            Change the <span className="italic font-light">Mood</span>
+            <span className="font-light">A</span> <span className="italic font-serif text-[#F0E5DA]">Story</span> <span className="font-light">This</span> <span className="italic font-serif">Beautiful</span><br />
+            <span className="font-light">Deserves The</span> <span className="italic font-serif text-[#F0E5DA]">Best</span>
           </h1>
 
           {/* CTA Button */}
           <button className="group inline-flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-30 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
             <span>Order the Design</span>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-yellow-400 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
-              <svg 
-                className="w-4 h-4 sm:w-5 sm:h-5 text-black" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-4 h-4 sm:w-5 sm:h-5 text-black"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
             </div>
