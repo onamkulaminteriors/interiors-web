@@ -267,7 +267,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
         </motion.div>
 
         {/* --- SECTION 2: BRANDS GRID --- */}
-        <motion.div
+        {/* <motion.div
           className="absolute inset-0 flex flex-col justify-center items-center px-4 pt-20 sm:pt-0"
           style={{
             opacity: section2Opacity,
@@ -299,7 +299,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
               />
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* --- SECTION 3: PARTNERS --- */}
         <motion.div
