@@ -1,5 +1,11 @@
+"use client";
+
+import { useState } from "react";
+import EnquiryModal from "./EnquiryModal";
 
 const CTASection = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Image */}
@@ -31,7 +37,10 @@ const CTASection = () => {
           </h1>
 
           {/* CTA Button */}
-          <button className="group inline-flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-30 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="group inline-flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-30 text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-medium transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 active:scale-95"
+          >
             <span>Order the Design</span>
             <div className="w-8 h-8 sm:w-10 sm:h-10 bg-yellow-400 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:rotate-45">
               <svg
@@ -56,6 +65,9 @@ const CTASection = () => {
       <div className="absolute top-10 left-10 w-2 h-2 bg-white opacity-60 rounded-full animate-pulse hidden sm:block" />
       <div className="absolute top-20 right-20 w-3 h-3 bg-white opacity-40 rounded-full animate-pulse delay-1000 hidden md:block" />
       <div className="absolute bottom-32 left-1/4 w-1 h-1 bg-white opacity-80 rounded-full animate-pulse delay-500 hidden lg:block" />
+
+      {/* Enquiry Modal */}
+      <EnquiryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   );
 };

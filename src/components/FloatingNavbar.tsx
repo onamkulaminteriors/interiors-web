@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Home, User, Briefcase, Mail, ArrowRight } from 'lucide-react';
+import { Menu, X, Armchair, User, Palette, Mail, ArrowRight } from 'lucide-react';
 import logo from '../assets/images/LOGO 01.png';
 
 interface FloatingNavbarProps {
@@ -52,9 +52,9 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
   const scrollProgress = Math.min(scrollY / (heroHeight * 0.6), 1);
 
   const navItems = [
-    { name: 'Home', icon: Home },
+    { name: 'Home', icon: Armchair },
     { name: 'About', icon: User },
-    { name: 'Projects', icon: Briefcase },
+    { name: 'Projects', icon: Palette },
     { name: 'Contact', icon: Mail },
   ];
 

@@ -49,7 +49,7 @@ const Footer = memo(() => {
                     <span>Terms of Service</span>
                   </div>
                   <div className="mt-4 text-gray-500 text-sm">
-                    mailto: hi@onamkulam.com
+                    mailto: onamkulaminteriors@gmail.com
                   </div>
                 </div>
               </div>
@@ -108,7 +108,7 @@ const Footer = memo(() => {
               <div className="flex-1">
                 {/* Responsive text size */}
                 <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-none tracking-tight break-words">
-                  hi@onamkulam.com
+                  onamkulaminteriors@gmail.com
                 </h2>
               </div>
 
@@ -132,7 +132,7 @@ const Footer = memo(() => {
             <span>Terms of Service</span>
           </div>
           <div className="text-gray-500 text-sm">
-            mailto: hi@onamkulam.com
+            mailto: onamkulaminteriors@gmail.com
           </div>
         </div>
       </div>
