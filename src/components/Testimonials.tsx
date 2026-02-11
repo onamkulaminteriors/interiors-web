@@ -200,6 +200,18 @@ const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
           ))}
         </div>
       </div>
+
+      {/* Scroll hint text - appears briefly at the start */}
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none z-[55]"
+        style={{
+          opacity: useTransform(scrollProgress, [0, 0.15, 0.3], [1, 0.6, 0])
+        }}
+      >
+        <p className="text-black text-sm sm:text-base md:text-lg font-light tracking-wider opacity-60">
+          The journey continues...
+        </p>
+      </motion.div>
     </div>
   );
 });
