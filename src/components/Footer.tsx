@@ -5,7 +5,7 @@ const Footer = memo(() => {
     // FIX: Enabled internal scrolling for mobile (overflow-y-auto)
     // and disabled it for desktop (lg:overflow-y-hidden)
     <div className="relative w-full h-screen bg-black overflow-y-auto lg:overflow-y-hidden">
-      
+
       {/* Background Pattern/Texture */}
       <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full bg-gradient-to-br from-gray-800 via-gray-900 to-black"></div>
@@ -18,13 +18,13 @@ const Footer = memo(() => {
       {/* Main Content Wrapper */}
       {/* FIX: Added pt-28 for mobile navbar clearance, reset on desktop with lg:pt-0 */}
       <div className="relative z-10 h-auto min-h-full flex flex-col pt-28 lg:pt-0">
-        
+
         {/* Top Section */}
         {/* flex-1 ensures it tries to fill the screen (for desktop) */}
         <div className="flex-1 px-8 lg:px-16 xl:px-24 pt-16 lg:pt-24">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-              
+
               {/* Left Column - Brand Statement */}
               <div className="lg:col-span-5 flex flex-col justify-between">
                 <div>
@@ -33,7 +33,7 @@ const Footer = memo(() => {
                       ONAMKULAM
                     </h1>
                   </div>
-                  
+
                   <p className="text-gray-300 text-lg lg:text-xl xl:text-2xl leading-relaxed font-light max-w-md">
                     We transform your<br />
                     vision into beautifully<br />
@@ -65,6 +65,9 @@ const Footer = memo(() => {
                   </a>
                   <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
                     About Us
+                  </a>
+                  <a href="/blogs" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                    Blog
                   </a>
                   <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
                     Contact
@@ -101,7 +104,7 @@ const Footer = memo(() => {
         <div className="px-8 lg:px-16 xl:px-24 pb-12 lg:pb-24 pt-12 lg:pt-0">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-              
+
               <div className="flex-1">
                 {/* Responsive text size */}
                 <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-none tracking-tight break-words">
@@ -135,15 +138,15 @@ const Footer = memo(() => {
       </div>
 
       {/* Decorative Elements */}
-      <div 
+      <div
         className="absolute top-20 right-20 w-2 h-2 bg-white opacity-30 rounded-full animate-pulse hidden lg:block"
         style={{ willChange: 'opacity' }}
       ></div>
-      <div 
+      <div
         className="absolute bottom-40 left-1/4 w-1 h-1 bg-white opacity-50 rounded-full animate-pulse delay-1000 hidden lg:block"
         style={{ willChange: 'opacity' }}
       ></div>
-      
+
     </div>
   );
 });
