@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
     // Base URL for relative images
-    metadataBase: new URL('https://onamkulam.com'),
+    metadataBase: new URL('https://onamkulaminteriors.com'),
 
     // Basic metadata
     title: 'OnamKulam Interiors - Premium Interior Design & Architecture',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://onamkulam.com', // Replace with your actual domain
+        url: 'https://onamkulaminteriors.com',
         siteName: 'OnamKulam Interiors',
         title: 'OnamKulam Interiors - Premium Interior Design & Architecture',
         description: 'Transform your space with OnamKulam Interiors. We specialize in premium residential and commercial interior design, bringing your vision to life with innovative solutions.',
