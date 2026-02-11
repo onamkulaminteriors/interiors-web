@@ -145,12 +145,11 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
   // 3. Derived Sub-Progress
   const titleProgress = useTransform(titleGridProgress, p => Math.min(1, p * 1.5));
   const gridProgress = useTransform(titleGridProgress, p => p > 0.2 ? Math.min(1, (p - 0.2) * 2) : 0);
-  // Removed color transition to prevent "end of site" feeling
-  const colorTransitionProgress = useTransform(scrollProgress, p => 0); // Always 0, no transition
+  const colorTransitionProgress = useTransform(scrollProgress, p => p > 0.8 ? Math.min(1, (p - 0.8) * 5) : 0);
 
-  // 4. Styles & Backgrounds (keep black throughout)
-  const backgroundColor = useTransform(colorTransitionProgress, [0, 1], ['#000000', '#000000']); // Always black
-  const textColor = useTransform(colorTransitionProgress, [0, 1], ['#ffffff', '#ffffff']); // Always white
+  // 4. Styles & Backgrounds
+  const backgroundColor = useTransform(colorTransitionProgress, [0, 1], ['#000000', '#ffffff']);
+  const textColor = useTransform(colorTransitionProgress, [0, 1], ['#ffffff', '#000000']);
   const sweepTransform = useTransform(colorTransitionProgress, p => `translate3d(${-100 + p * 200}%, 0, 0)`);
   const sweepOpacity = useTransform(colorTransitionProgress, p => p > 0 ? Math.min(1, p * 2) : 0);
 
@@ -231,8 +230,8 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     >
       <style>{marqueeStyle}</style>
 
-      {/* Color Sweep - Removed to keep consistent black background */}
-      {/* <motion.div
+      {/* Color Sweep */}
+      <motion.div
         className="absolute top-0 left-0 w-full h-full pointer-events-none z-[1]"
         style={{
           background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.95) 50%, transparent 100%)',
@@ -240,7 +239,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
           transform: sweepTransform,
           willChange: 'transform'
         }}
-      /> */}
+      />
 
       <div className="relative z-10 w-full h-full">
 
