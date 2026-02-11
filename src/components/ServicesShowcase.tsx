@@ -90,18 +90,22 @@ const ServicesShowcase = () => {
               {services.map((service, index) => (
                 <div
                   key={service.id}
-                  className={`flex items-center gap-4 xl:gap-6 py-2 xl:py-3 cursor-pointer transition-all duration-300 ${hoveredIndex === index
+                  className={`flex items-center gap-4 xl:gap-6 py-2 xl:py-3 transition-all duration-300 ${hoveredIndex === index
                     ? 'text-gray-800'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
-                  onMouseEnter={() => handleMouseEnter(index)}
                 >
                   <div className="text-sm font-light min-w-[2rem]">
                     {service.id}
                   </div>
 
-                  <div className="flex-1">
-                    <h3 className="text-lg xl:text-xl font-light">
+                  <div
+                    className="flex-1"
+                  >
+                    <h3
+                      className="text-lg xl:text-xl font-light cursor-pointer inline-block"
+                      onMouseEnter={() => handleMouseEnter(index)}
+                    >
                       {service.title}
                     </h3>
                   </div>
