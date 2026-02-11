@@ -12,8 +12,8 @@ const Preloader = ({ onFinish }: PreloaderProps) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      setTimeout(onFinish, 1200);
-    }, 3000);
+      setTimeout(onFinish, 1000);
+    }, 1000);
     return () => clearTimeout(timer);
   }, [onFinish]);
 

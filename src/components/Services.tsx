@@ -1,5 +1,6 @@
 import { useRef, useState, memo } from "react";
 import { motion, useTransform, MotionValue, useMotionValueEvent } from "framer-motion";
+import { useRouter } from 'next/navigation';
 
 interface ServicesScrollProps {
   scrollProgress: MotionValue<number>;
@@ -39,6 +40,7 @@ const allItems = services.flatMap(service =>
 );
 
 const ServicesScroll = memo(({ scrollProgress }: ServicesScrollProps) => {
+  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const totalItems = allItems.length;
 
@@ -114,7 +116,7 @@ const ServicesScroll = memo(({ scrollProgress }: ServicesScrollProps) => {
         </div>
 
         {/* Button */}
-        <button className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity duration-300 text-sm sm:text-base group">
+        <button className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity duration-300 text-sm sm:text-base group" onClick={() => router.push('/portfolio')}>
           <span>View All Projects</span>
           <span className="transform transition-transform group-hover:translate-x-1">→</span>
         </button>
@@ -125,8 +127,8 @@ const ServicesScroll = memo(({ scrollProgress }: ServicesScrollProps) => {
             <div
               key={index}
               className={`h-1 rounded-full transition-all duration-300 ${index === activeIndex
-                  ? 'bg-white w-8'
-                  : 'bg-gray-600 w-2'
+                ? 'bg-white w-8'
+                : 'bg-gray-600 w-2'
                 }`}
             />
           ))}
@@ -189,8 +191,8 @@ const ServicesScroll = memo(({ scrollProgress }: ServicesScrollProps) => {
             <div
               key={index}
               className={`w-1 rounded-full transition-all duration-300 ${index === activeIndex
-                  ? 'bg-white h-8'
-                  : 'bg-gray-600 h-2'
+                ? 'bg-white h-8'
+                : 'bg-gray-600 h-2'
                 }`}
             />
           ))}

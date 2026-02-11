@@ -23,7 +23,7 @@ const ServicesShowcase = () => {
       id: '03',
       title: 'Detailed Drawings & Approval',
       description: 'We turn your dream into a solid plan. Once you love every detail, we finalize the drawings and sign the contract, officially beginning the creation of your story.',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop',
+      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop',
       secondaryImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=800&fit=crop'
     },
     {
@@ -82,7 +82,7 @@ const ServicesShowcase = () => {
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-5 h-full">
           {/* Left Side - Service List & Description */}
-          <div 
+          <div
             className="bg-stone-50 flex flex-col justify-center px-8 xl:px-16 py-16 col-span-2"
             onMouseLeave={handleMouseLeave}
           >
@@ -90,19 +90,22 @@ const ServicesShowcase = () => {
               {services.map((service, index) => (
                 <div
                   key={service.id}
-                  className={`flex items-center gap-4 xl:gap-6 py-2 xl:py-3 cursor-pointer transition-all duration-300 ${
-                    hoveredIndex === index 
-                      ? 'text-gray-800' 
-                      : 'text-gray-400 hover:text-gray-600'
-                  }`}
-                  onMouseEnter={() => handleMouseEnter(index)}
+                  className={`flex items-center gap-4 xl:gap-6 py-2 xl:py-3 transition-all duration-300 ${hoveredIndex === index
+                    ? 'text-gray-800'
+                    : 'text-gray-400 hover:text-gray-600'
+                    }`}
                 >
                   <div className="text-sm font-light min-w-[2rem]">
                     {service.id}
                   </div>
-                  
-                  <div className="flex-1">
-                    <h3 className="text-lg xl:text-xl font-light">
+
+                  <div
+                    className="flex-1"
+                  >
+                    <h3
+                      className="text-lg xl:text-xl font-light cursor-pointer inline-block"
+                      onMouseEnter={() => handleMouseEnter(index)}
+                    >
                       {service.title}
                     </h3>
                   </div>
@@ -121,15 +124,15 @@ const ServicesShowcase = () => {
           {/* Right Side - Scroll Up Image Display */}
           <div className="relative overflow-hidden bg-gray-100 col-span-3 p-8 xl:p-12">
             <div className="relative h-full w-full overflow-hidden">
-              <div 
+              <div
                 className="h-full w-full transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateY(-${hoveredIndex * 100}%)` }}
               >
                 {services.map((service) => (
                   <div key={service.id} className="h-full w-full flex-shrink-0 relative">
-                    <img 
+                    <img
                       src={service.image}
-                      alt={service.title} 
+                      alt={service.title}
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/5"></div>
@@ -148,17 +151,16 @@ const ServicesShowcase = () => {
               {services.map((service, index) => (
                 <div
                   key={service.id}
-                  className={`flex items-center gap-3 sm:gap-4 py-2 sm:py-3 cursor-pointer transition-all duration-300 ${
-                    hoveredIndex === index 
-                      ? 'text-gray-800' 
-                      : 'text-gray-400'
-                  }`}
+                  className={`flex items-center gap-3 sm:gap-4 py-2 sm:py-3 cursor-pointer transition-all duration-300 ${hoveredIndex === index
+                    ? 'text-gray-800'
+                    : 'text-gray-400'
+                    }`}
                   onClick={() => setHoveredIndex(index)}
                 >
                   <div className="text-xs sm:text-sm font-light min-w-[1.5rem] sm:min-w-[2rem]">
                     {service.id}
                   </div>
-                  
+
                   <div className="flex-1">
                     <h3 className="text-base sm:text-lg md:text-xl font-light">
                       {service.title}
@@ -179,9 +181,9 @@ const ServicesShowcase = () => {
           {/* Image Display for Mobile */}
           <div className="relative h-48 sm:h-64 md:h-80 bg-gray-100 p-4">
             <div className="relative h-full w-full">
-              <img 
+              <img
                 src={services[hoveredIndex].image}
-                alt={services[hoveredIndex].title} 
+                alt={services[hoveredIndex].title}
                 className="w-full h-full object-cover transition-all duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-black/5"></div>

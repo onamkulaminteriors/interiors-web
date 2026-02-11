@@ -122,34 +122,35 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
   // --- TOP LEVEL HOOKS ---
   // Define all MotionValues and transforms here, unconditionally.
 
-  // 1. Current Section Logic
+  // 1. Current Section Logic (adjusted for commented-out Section 2)
   const currentSection = useTransform(scrollProgress, (p) => {
     if (p < 0.22) return 0;
-    if (p < 0.24) return 0.5;
-    if (p < 0.47) return 1;
-    if (p < 0.49) return 1.5;
-    if (p < 0.77) return 2;
-    if (p < 0.79) return 2.5;
+    if (p < 0.25) return 0.5;
+    // Skip section 1 (was brands grid, now commented out)
+    if (p < 0.27) return 1.5;
+    if (p < 0.52) return 2;
+    if (p < 0.55) return 2.5;
     return 3;
   });
 
-  // 2. Main Progress Values
-  const quoteProgress = useTransform(scrollProgress, p => p < 0.24 ? Math.min(1, p / 0.22) : 1);
-  const titleGridProgress = useTransform(scrollProgress, p => (p >= 0.22 && p < 0.49) ?
-    Math.min(1, Math.max(0, (p - 0.24) / 0.23)) : 0);
-  const partnersProgress = useTransform(scrollProgress, p => (p >= 0.47 && p < 0.79) ?
-    Math.min(1, Math.max(0, (p - 0.49) / 0.28)) : 0);
-  const finalQuoteProgress = useTransform(scrollProgress, p => p >= 0.77 ?
-    Math.min(1, Math.max(0, (p - 0.79) / 0.21)) : 0);
+  // 2. Main Progress Values (adjusted for faster transitions)
+  const quoteProgress = useTransform(scrollProgress, p => p < 0.25 ? Math.min(1, p / 0.22) : 1);
+  const titleGridProgress = useTransform(scrollProgress, p => (p >= 0.22 && p < 0.47) ?
+    Math.min(1, Math.max(0, (p - 0.25) / 0.20)) : 0);
+  const partnersProgress = useTransform(scrollProgress, p => (p >= 0.25 && p < 0.55) ?
+    Math.min(1, Math.max(0, (p - 0.27) / 0.25)) : 0);
+  const finalQuoteProgress = useTransform(scrollProgress, p => p >= 0.52 ?
+    Math.min(1, Math.max(0, (p - 0.55) / 0.20)) : 0);
 
   // 3. Derived Sub-Progress
   const titleProgress = useTransform(titleGridProgress, p => Math.min(1, p * 1.5));
   const gridProgress = useTransform(titleGridProgress, p => p > 0.2 ? Math.min(1, (p - 0.2) * 2) : 0);
-  const colorTransitionProgress = useTransform(scrollProgress, p => p > 0.8 ? Math.min(1, (p - 0.8) * 5) : 0);
+  // Removed color transition to prevent "end of site" feeling
+  const colorTransitionProgress = useTransform(scrollProgress, p => 0); // Always 0, no transition
 
-  // 4. Styles & Backgrounds
-  const backgroundColor = useTransform(colorTransitionProgress, [0, 1], ['#000000', '#ffffff']);
-  const textColor = useTransform(colorTransitionProgress, [0, 1], ['#ffffff', '#000000']);
+  // 4. Styles & Backgrounds (keep black throughout)
+  const backgroundColor = useTransform(colorTransitionProgress, [0, 1], ['#000000', '#000000']); // Always black
+  const textColor = useTransform(colorTransitionProgress, [0, 1], ['#ffffff', '#ffffff']); // Always white
   const sweepTransform = useTransform(colorTransitionProgress, p => `translate3d(${-100 + p * 200}%, 0, 0)`);
   const sweepOpacity = useTransform(colorTransitionProgress, p => p > 0 ? Math.min(1, p * 2) : 0);
 
@@ -168,12 +169,12 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
   const section2Transform = useTransform(currentSection, s => `translate3d(0, ${s < 0.5 ? 80 : s <= 1.5 ? 0 : -(s - 1.5) * 100}px, 0)`);
   const section2ZIndex = useTransform(currentSection, s => s >= 0.5 && s <= 1.8 ? 10 : 1);
 
-  // Section 3: Partners
+  // Section 3: Partners (adjusted for faster entry)
   const section3Opacity = useTransform(currentSection, s => s >= 1.5 && s <= 2.5 ? 1 :
     (s > 2.5 ? Math.max(0, 1 - ((s - 2.5) * 4)) :
-      (s < 1.5 ? 0 : Math.min(1, (s - 1.5) * 4))));
-  const section3Transform = useTransform(currentSection, s => `translate3d(0, ${s < 1.5 ? 80 : s <= 2.5 ? 0 : -(s - 2.5) * 100}px, 0)`);
-  const section3ZIndex = useTransform(currentSection, s => s >= 1.5 && s <= 2.8 ? 10 : 1);
+      (s < 1.5 ? 0 : Math.min(1, (s - 1.5) * 8))));
+  const section3Transform = useTransform(currentSection, s => `translate3d(0, ${s < 1.5 ? 40 : s <= 2.5 ? 0 : -(s - 2.5) * 100}px, 0)`);
+  const section3ZIndex = useTransform(currentSection, s => s >= 1.5 && s <= 2.6 ? 10 : 1);
   const section3TitleOpacity = useTransform(partnersProgress, p => Math.min(1, p * 1.5));
   const section3TitleTransform = useTransform(partnersProgress, p => `translate3d(0, ${Math.max(0, ((1 - p) * 25))}px, 0)`);
   const section3MarqueeOpacity = useTransform(partnersProgress, p => Math.min(1, p * 1.2));
@@ -230,8 +231,8 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     >
       <style>{marqueeStyle}</style>
 
-      {/* Color Sweep */}
-      <motion.div
+      {/* Color Sweep - Removed to keep consistent black background */}
+      {/* <motion.div
         className="absolute top-0 left-0 w-full h-full pointer-events-none z-[1]"
         style={{
           background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.95) 50%, transparent 100%)',
@@ -239,7 +240,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
           transform: sweepTransform,
           willChange: 'transform'
         }}
-      />
+      /> */}
 
       <div className="relative z-10 w-full h-full">
 
@@ -267,7 +268,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
         </motion.div>
 
         {/* --- SECTION 2: BRANDS GRID --- */}
-        <motion.div
+        {/* <motion.div
           className="absolute inset-0 flex flex-col justify-center items-center px-4 pt-20 sm:pt-0"
           style={{
             opacity: section2Opacity,
@@ -299,7 +300,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
               />
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* --- SECTION 3: PARTNERS --- */}
         <motion.div

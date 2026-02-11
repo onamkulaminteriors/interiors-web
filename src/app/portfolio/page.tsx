@@ -118,10 +118,10 @@ export default function Portfolio() {
                     {/* Back Button */}
                     <button
                         onClick={() => router.push('/')}
-                        className="group mb-6 sm:mb-8 inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm hover:bg-[#8B4513] rounded-full transition-all duration-300 border border-white/20 hover:border-[#8B4513] text-sm sm:text-base"
+                        className="group mb-6 sm:mb-8 inline-flex items-center gap-2 sm:gap-3 transition-all duration-300 text-sm sm:text-base text-gray-400 hover:text-white"
                     >
-                        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white transform group-hover:-translate-x-1 transition-transform duration-300" />
-                        <span className="font-medium text-white">Back to Home</span>
+                        <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:-translate-x-1 transition-transform duration-300" />
+                        <span className="font-medium">Back to Home</span>
                     </button>
 
                     {/* Title */}
