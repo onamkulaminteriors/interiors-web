@@ -60,7 +60,7 @@ export default function HomePage() {
     const quoteProgress = useMotionValue(0);
 
     // --- HEIGHT CALCULATION ---
-    const { totalHeight } = useMemo(() => {
+    const { totalHeight, footerStart, sectionDuration } = useMemo(() => {
         const heroHeightVal = Math.min(windowHeight, 800);
         const sectionDurationVal = heroHeightVal;
         const displayDurationVal = heroHeightVal * 0.8;
@@ -97,8 +97,10 @@ export default function HomePage() {
 
         // Total height ends after footer
         const footerEnd = latestProjectsDisplayEnd + heroHeightVal * 2;
+        const footerStart = latestProjectsDisplayEnd;
+        const sectionDuration = heroHeightVal; // Same calculation as in loop
 
-        return { totalHeight: footerEnd };
+        return { totalHeight: footerEnd, footerStart: footerStart, sectionDuration: sectionDuration };
     }, [windowHeight]);
 
     // --- ANIMATION LOOP ---
@@ -202,7 +204,7 @@ export default function HomePage() {
             const founderStart = servicesShowcaseDisplayEnd;
             const founderDisplayEnd = founderStart + sectionDurationVal + displayDurationVal;
             updateEl('founder', calculateOffset(founderStart), scrollY >= founderStart && scrollY < founderDisplayEnd + sectionDurationVal, 70);
-            scrollTargets.current.about = founderStart;
+            scrollTargets.current.about = founderStart + sectionDurationVal;
 
             // 9. TEAM
             const teamStart = founderDisplayEnd;
@@ -214,7 +216,6 @@ export default function HomePage() {
             const ctaDisplayEnd = ctaStartVal + sectionDurationVal + displayDurationVal;
             updateEl('cta', calculateOffset(ctaStartVal), scrollY >= ctaStartVal && scrollY < ctaDisplayEnd + sectionDurationVal, 90);
             scrollTargets.current.cta = ctaStartVal;
-            scrollTargets.current.contact = ctaStartVal;
 
             // 11. LATEST PROJECTS (Start of PROJECTS)
             const latestProjectsStartVal = ctaDisplayEnd;
@@ -238,24 +239,25 @@ export default function HomePage() {
 
                 lpEl.style.pointerEvents = latestProjectsVisibleVal ? 'auto' : 'none';
             }
-            scrollTargets.current.latestProjects = latestProjectsStartVal;
-            scrollTargets.current.projects = latestProjectsStartVal;
+            scrollTargets.current.latestProjects = latestProjectsStartVal + sectionDurationVal;
+            scrollTargets.current.projects = latestProjectsStartVal + sectionDurationVal;
 
             // 12. FOOTER
             const footerStart = latestProjectsDisplayEnd;
             const footerOffsetVal = calculateOffset(footerStart);
             const footerVisibleVal = scrollY >= footerStart;
             updateEl('footer', footerOffsetVal, footerVisibleVal, 100);
+            scrollTargets.current.contact = footerStart + sectionDurationVal; // Contact button scrolls to footer with offset
 
             // --- CALCULATE ACTIVE SECTION ---
             // Determine which section is currently active for Navbar
             let currentSection = 'Home';
-            if (scrollY >= founderStart && scrollY < ctaStartVal) {
-                currentSection = 'About';
-            } else if (scrollY >= ctaStartVal && scrollY < latestProjectsStartVal) {
+            if (scrollY >= footerStart) {
                 currentSection = 'Contact';
             } else if (scrollY >= latestProjectsStartVal) {
                 currentSection = 'Projects';
+            } else if (scrollY >= founderStart) {
+                currentSection = 'About';
             }
             // Default remains 'Home' for everything before Founder
 
@@ -280,10 +282,12 @@ export default function HomePage() {
     useEffect(() => {
         document.documentElement.style.scrollBehavior = "auto";
         document.title = "OnamKulam - Interior";
+        // Initialize contact scroll target to footer with offset to show it completely
+        scrollTargets.current.contact = footerStart + sectionDuration;
         return () => {
             document.documentElement.style.scrollBehavior = "auto";
         };
-    }, []);
+    }, [footerStart, sectionDuration]);
 
     const smoothScrollTo = useCallback((target: number) => {
         // Add offset for sticky headers if any, or just scroll to target.
