@@ -87,13 +87,13 @@ const ServicesScroll = memo(({ scrollProgress }: ServicesScrollProps) => {
       className="flex flex-col lg:flex-row w-full h-screen bg-black text-white overflow-hidden"
     >
       {/* --- LEFT SIDE (Text) --- */}
-      <div className="flex flex-col justify-center items-start w-full lg:w-1/2 px-6 sm:px-8 md:px-12 lg:px-16 py-8 pt-24 lg:py-0 lg:pt-0 relative z-10">
+      <div className="flex flex-col justify-center items-start w-full lg:w-1/2 px-6 sm:px-8 md:px-12 lg:px-16 py-8 pt-24 lg:py-16 lg:pt-20 relative z-10">
 
         {/* Title */}
         <div className="mb-4 lg:mb-6 min-h-[4rem] flex items-center w-full">
           <h2
             key={isActiveState ? currentItem.title : 'default'}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light leading-tight w-full animate-fade-in"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-6xl font-light leading-tight w-full animate-fade-in"
             style={{ color: '#F0E5DA' }}
           >
             {isActiveState ? currentItem.title : 'Our Services'}

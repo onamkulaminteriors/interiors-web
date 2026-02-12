@@ -87,13 +87,13 @@ const TeamSection = () => {
   return (
     // --- CONTAINER UPDATE: Matches Achievements Scrolling Logic ---
     // h-screen + overflow-y-auto: Enables vertical scroll inside this section on mobile
-    // lg:overflow-y-hidden: Locks scroll on desktop where content fits
-    <div className="relative h-screen w-full bg-gray-50 overflow-y-auto lg:overflow-y-hidden">
+    // lg:overflow-y-auto: Allows scrolling on laptops if height requires it
+    <div className="relative h-screen w-full bg-gray-50 overflow-y-auto">
 
       {/* Content Wrapper */}
       {/* pt-28: Pushes content down so Navbar doesn't cover it on mobile */}
-      {/* lg:h-full lg:justify-center: Centers content vertically on desktop */}
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 pb-12 lg:pt-0 lg:pb-0 lg:h-full lg:flex lg:flex-col lg:justify-center">
+      {/* lg:min-h-full lg:justify-center: Centers content vertically on desktop but allow growth */}
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 pb-12 lg:pt-20 lg:pb-10 lg:min-h-full lg:flex lg:flex-col lg:justify-center">
 
         {/* Header */}
         <div className={`mb-4 sm:mb-6 md:mb-8 transition-all duration-1000 ease-out delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

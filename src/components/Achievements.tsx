@@ -104,25 +104,25 @@ const Achievements = memo(({ scrollProgress }: AchievementsProps) => {
          On Desktop: No transform.
       */}
       <motion.div
-        className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12 pt-32 sm:pt-24 md:pt-28 lg:pt-32 pb-16 sm:pb-12 md:pb-16 lg:pb-20 h-full lg:flex lg:flex-col lg:justify-center"
+        className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-12 pt-32 sm:pt-32 md:pt-36 lg:pt-40 xl:pt-48 pb-10 sm:pb-12 md:pb-16 lg:pb-10 h-full lg:flex lg:flex-col lg:justify-center"
         style={{ y: contentTranslateY }}
       >
         {/* Header */}
-        <div className="mb-10 sm:mb-12 md:mb-16">
-          <p className="text-base sm:text-base md:text-lg lg:text-xl text-gray-800 leading-relaxed max-w-4xl">
+        <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-8">
+          <p className="text-base sm:text-base md:text-lg lg:text-base xl:text-xl text-gray-800 leading-relaxed max-w-4xl">
             Every space has a story waiting to be told. It's the story of a family growing, a quiet evening with a book, or a gathering filled with laughter. We believe in designing not just interiors, but the very settings where your life's best scenes are played out.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12 sm:gap-10 md:gap-12 lg:gap-16 mb-10 sm:mb-16 md:mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10 sm:gap-10 md:gap-12 lg:gap-10 mb-10 sm:mb-16 md:mb-20 lg:mb-8">
           {achievements.map((achievement, index) => (
             <div key={index} className="transition-all duration-700">
               <div className="mb-6 sm:mb-6">
-                <h2 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-black mb-3 sm:mb-2 leading-none">
+                <h2 className="text-6xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-7xl font-medium text-black mb-3 sm:mb-2 leading-none">
                   {counts[index]}{achievement.showPlus ? ' +' : ''}
                 </h2>
-                <h3 className="text-xl sm:text-lg md:text-xl lg:text-2xl font-medium text-black mb-2 sm:mb-2">
+                <h3 className="text-xl sm:text-lg md:text-xl lg:text-lg xl:text-2xl font-medium text-black mb-2 sm:mb-2">
                   {achievement.title}
                 </h3>
                 <p className="text-gray-600 text-base sm:text-sm md:text-base leading-relaxed">

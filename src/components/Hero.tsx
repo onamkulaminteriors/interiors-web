@@ -55,10 +55,10 @@ const Hero = memo(({ onExploreClick }: HeroProps) => {
       {/* Main Heading */}
       <div className="absolute bottom-10 sm:bottom-14 left-4 sm:left-6 lg:left-16 right-4 sm:right-6 lg:right-16">
         <h1 className="text-white font-light leading-tight sm:leading-none">
-          <span className="block font-bold text-4xl sm:text-6xl lg:text-8xl xl:text-7xl">
+          <span className="block font-bold text-4xl sm:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
             From Space to Soul —
           </span>
-          <span className="block text-4xl sm:text-6xl lg:text-8xl xl:text-9xl mt-2">
+          <span className="block text-4xl sm:text-6xl lg:text-6xl xl:text-8xl 2xl:text-9xl mt-2">
             Interiors That Tell <span className="italic font-serif text-[#F0E5DA]">Your Story</span>
           </span>
         </h1>

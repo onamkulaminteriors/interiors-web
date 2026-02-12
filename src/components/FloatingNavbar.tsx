@@ -67,12 +67,18 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
   const getNavbarWidth = () => {
     if (scrollProgress === 0) return 'auto';
 
+    const currentWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const maxShift = 200;
+
+    // Calculate safe width: screen width - right margin (24) - max shift (200) - left margin (24)
+    const safeMaxWidth = currentWidth - 48 - maxShift;
+
     const baseWidths = {
       desktop: {
         initial: 260,
-        step1: 480,
-        step2: 720,
-        final: 950
+        step1: Math.min(480, Math.max(260, safeMaxWidth * 0.5)),
+        step2: Math.min(720, Math.max(380, safeMaxWidth * 0.75)),
+        final: Math.min(950, safeMaxWidth)
       },
       tablet: {
         initial: 160,
@@ -83,14 +89,13 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
     };
 
     const widths = deviceType === 'desktop' ? baseWidths.desktop : baseWidths.tablet;
-    const maxWidth = window.innerWidth - 48; // Ensure 24px padding on each side
 
     let calculatedWidth = widths.final;
     if (scrollProgress < 0.2) calculatedWidth = widths.initial + smoothProgress * (widths.step1 - widths.initial);
     else if (scrollProgress < 0.4) calculatedWidth = widths.step1 + smoothProgress * (widths.step2 - widths.step1);
     else if (scrollProgress < 0.7) calculatedWidth = widths.step2 + smoothProgress * (widths.final - widths.step2);
 
-    return `${Math.min(calculatedWidth, maxWidth)}px`;
+    return `${calculatedWidth}px`;
   };
 
   const getNavbarTransform = () => {
@@ -98,8 +103,22 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
     // Desktop still slides from right to left.
     if (deviceType === 'tablet') return 'none';
 
-    const moveDistance = smoothProgress * 200;
-    return `translateX(-${moveDistance}px)`;
+    // Calculate center position: we want the navbar centered when fully opened
+    // At scrollProgress = 1, the navbar should be centered
+    // Center of screen = window.innerWidth / 2
+    // Navbar starts at right: 24px from right edge
+    // We need to move it left by: (window.innerWidth - navbar.width) / 2 - 24px
+    const currentWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
+    const navbarWidth = 950; // Final width at full scroll
+    const rightMargin = 24; // top-6 = 24px
+    const leftOffset = 115; // Additional offset to move slightly left for better centering
+
+    // Calculate how much to move left to center it
+    const targetCenter = (currentWidth - navbarWidth) / 2;
+    const currentRight = rightMargin;
+    const moveDistance = currentRight - targetCenter + leftOffset;
+
+    return `translateX(-${Math.max(0, moveDistance * smoothProgress)}px)`;
   };
 
   const getNavbarBackground = () => {

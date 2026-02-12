@@ -52,7 +52,7 @@ const Team = () => {
   }, [teamMembers.length]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prev) => 
+    setCurrentIndex((prev) =>
       prev === 0 ? teamMembers.length - 1 : prev - 1
     );
   };
@@ -67,10 +67,10 @@ const Team = () => {
     <div className="min-h-screen w-full bg-gray-50 flex items-center justify-center relative overflow-hidden py-6 sm:py-10 lg:py-0">
       {/* Background */}
       <div className="absolute inset-0 bg-gray-50" />
-      
+
       {/* Main content container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-16">
-        
+
         {/* Mobile Layout (up to lg) */}
         <div className="lg:hidden">
           {/* Section Header */}
@@ -87,7 +87,7 @@ const Team = () => {
           <div className="flex flex-col items-center justify-between px-4">
             {/* Team member photo */}
             <div className="flex justify-center mb-4">
-              <img 
+              <img
                 src={currentMember.image}
                 alt={currentMember.name}
                 className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover shadow-md"
@@ -125,7 +125,7 @@ const Team = () => {
               >
                 <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" />
               </button>
-              
+
               <button
                 onClick={goToNext}
                 className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
@@ -140,11 +140,10 @@ const Team = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                      index === currentIndex 
-                        ? 'bg-gray-900 w-4' 
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${index === currentIndex
+                        ? 'bg-gray-900 w-4'
                         : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
+                      }`}
                     aria-label={`Go to team member ${index + 1}`}
                   />
                 ))}
@@ -155,10 +154,10 @@ const Team = () => {
 
         {/* Desktop Layout (lg and up) */}
         <div className="hidden lg:grid lg:grid-cols-[20%_80%] gap-8 items-center">
-          
+
           {/* LEFT side - Photo */}
           <div className="flex justify-center lg:justify-start">
-            <img 
+            <img
               src={currentMember.image}
               alt={currentMember.name}
               className="w-40 h-40 rounded-full object-cover shadow-md"
@@ -167,10 +166,10 @@ const Team = () => {
 
           {/* RIGHT side - Content (80% width) */}
           <div className="text-gray-800 space-y-6 lg:pl-4">
-            
+
             {/* Section Header */}
             <div>
-              <h2 className="text-5xl font-semibold text-gray-600 mb-2 tracking-wide">
+              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-gray-600 mb-2 tracking-wide">
                 MEET OUR TEAM
               </h2>
               <p className="text-gray-600 leading-relaxed">
@@ -181,7 +180,7 @@ const Team = () => {
             {/* Large Quote with curly quotes */}
             <div className="relative">
               <div className="absolute -left-6 -top-4 text-6xl text-gray-300 font-serif leading-none">&ldquo;</div>
-              <blockquote className="text-2xl lg:text-3xl text-gray-900 leading-snug font-light pl-10 pr-4">
+              <blockquote className="text-xl lg:text-2xl xl:text-3xl text-gray-900 leading-snug font-light pl-10 pr-4">
                 {currentMember.quote}
               </blockquote>
               <div className="absolute -bottom-6 right-0 text-6xl text-gray-300 font-serif leading-none">&rdquo;</div>
@@ -209,7 +208,7 @@ const Team = () => {
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
-              
+
               <button
                 onClick={goToNext}
                 className="w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
@@ -224,11 +223,10 @@ const Team = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentIndex 
-                        ? 'bg-gray-900 w-5' 
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
+                        ? 'bg-gray-900 w-5'
                         : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
+                      }`}
                     aria-label={`Go to team member ${index + 1}`}
                   />
                 ))}

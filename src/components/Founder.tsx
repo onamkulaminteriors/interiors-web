@@ -83,8 +83,8 @@ const Founder = () => {
 
           {/* Right - Content */}
           <div className="flex flex-col justify-center text-left space-y-8">
-            <h2 className="text-4xl lg:text-5xl font-light leading-tight mb-16">
-              <span className="block text-black text-2xl lg:text-3xl font-normal mb-10">
+            <h2 className="text-4xl lg:text-4xl xl:text-5xl font-light leading-tight mb-16">
+              <span className="block text-black text-2xl lg:text-2xl xl:text-3xl font-normal mb-10">
                 Meet the Visionary Behind Crafting Your Story
               </span>
               <span className="bg-gradient-to-r from-amber-900 to-amber-700 bg-clip-text text-transparent font-bold">
@@ -97,7 +97,7 @@ const Founder = () => {
               <div className="absolute -left-4 -top-2 text-6xl text-amber-200 font-serif">
                 &ldquo;
               </div>
-              <blockquote className="text-xl lg:text-2xl text-amber-800 leading-relaxed italic pl-10">
+              <blockquote className="text-xl lg:text-xl xl:text-2xl text-amber-800 leading-relaxed italic pl-10">
                 {founderData.quote}
               </blockquote>
               <div className="absolute -right-4 -bottom-6 text-6xl text-amber-200 font-serif">

@@ -45,7 +45,7 @@ const Quote: React.FC<QuoteProps> = memo(({ scrollProgress }) => {
     <div className="flex items-center justify-center min-h-screen bg-[#F0E5DA] px-6 sm:px-8">
       <div className="max-w-4xl mx-auto text-center">
 
-        <blockquote className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight text-black mb-8 flex flex-wrap justify-center gap-y-2">
+        <blockquote className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-light leading-tight text-black mb-8 flex flex-wrap justify-center gap-y-2">
           {words.map((word, wordIndex) => {
             return (
               <span

@@ -77,8 +77,8 @@ const ServicesShowcase = () => {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 flex items-center justify-center p-0">
-      <div className="max-w-none w-full h-screen">
+    <div className="min-h-screen bg-stone-50 flex items-center justify-center p-0 overflow-hidden">
+      <div className="max-w-none w-full h-screen overflow-y-auto lg:overflow-hidden">
         {/* Desktop Layout */}
         <div className="hidden lg:grid lg:grid-cols-5 h-full">
           {/* Left Side - Service List & Description */}
@@ -103,7 +103,7 @@ const ServicesShowcase = () => {
                     className="flex-1"
                   >
                     <h3
-                      className="text-lg xl:text-xl font-light cursor-pointer inline-block"
+                      className="text-base lg:text-lg xl:text-xl font-light cursor-pointer inline-block"
                       onMouseEnter={() => handleMouseEnter(index)}
                     >
                       {service.title}
@@ -115,7 +115,7 @@ const ServicesShowcase = () => {
 
             {/* Description Paragraph */}
             <div className="max-w-md xl:max-w-lg">
-              <p className="text-gray-600 text-sm xl:text-base leading-relaxed font-light">
+              <p className="text-gray-600 text-xs lg:text-sm xl:text-base leading-relaxed font-light">
                 {services[hoveredIndex].description}
               </p>
             </div>

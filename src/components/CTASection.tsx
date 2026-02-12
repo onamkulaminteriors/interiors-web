@@ -31,7 +31,7 @@ const CTASection = () => {
           </p>
 
           {/* Main heading */}
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-8 sm:mb-12 leading-tight">
+          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold mb-8 sm:mb-12 leading-tight">
             <span className="font-light">A</span> <span className="italic font-serif text-[#F0E5DA]">Story</span> <span className="font-light">This</span> <span className="italic font-serif">Beautiful</span><br />
             <span className="font-light">Deserves The</span> <span className="italic font-serif text-[#F0E5DA]">Best</span>
           </h1>

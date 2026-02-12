@@ -3,8 +3,8 @@ import React, { memo } from 'react';
 const Footer = memo(() => {
   return (
     // FIX: Enabled internal scrolling for mobile (overflow-y-auto)
-    // and disabled it for desktop (lg:overflow-y-hidden)
-    <div className="relative w-full h-screen bg-black overflow-y-auto lg:overflow-y-hidden">
+    // and enabled for desktop in case of small height
+    <div className="relative w-full h-screen bg-black overflow-y-auto">
 
       {/* Background Pattern/Texture */}
       <div className="absolute inset-0 opacity-10">
@@ -107,7 +107,7 @@ const Footer = memo(() => {
 
               <div className="flex-1">
                 {/* Responsive text size */}
-                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-none tracking-tight break-words">
+                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold leading-none tracking-tight break-words">
                   onamkulaminteriors@gmail.com
                 </h2>
               </div>
