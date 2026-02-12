@@ -208,9 +208,9 @@ const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
           opacity: useTransform(scrollProgress, [0, 0.15, 0.3], [1, 0.6, 0])
         }}
       >
-        <p className="text-black text-sm sm:text-base md:text-lg font-light tracking-wider opacity-60">
+        {/* <p className="text-black text-sm sm:text-base md:text-lg font-light tracking-wider opacity-60">
           The journey continues...
-        </p>
+        </p> */}
       </motion.div>
     </div>
   );
