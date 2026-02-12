@@ -19,7 +19,7 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
 
       if (width < 768) {
         setDeviceType('mobile');
-      } else if (width >= 768 && width < 1024) {
+      } else if (width >= 768 && width < 900) {
         setDeviceType('tablet');
       } else {
         setDeviceType('desktop');
@@ -111,14 +111,26 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
     const currentWidth = typeof window !== 'undefined' ? window.innerWidth : 1200;
     const navbarWidth = 950; // Final width at full scroll
     const rightMargin = 24; // top-6 = 24px
-    const leftOffset = 115; // Additional offset to move slightly left for better centering
+
+    // Dynamic offset based on screen width
+    // Smaller screens (Windows laptops ~1366-1440px) need more offset
+    // Larger screens (Macs ~1680-2560px) need less or no offset
+    let leftOffset = 0;
+    if (currentWidth < 1500) {
+      leftOffset = 40; // Windows laptops - shifted further right
+    } else if (currentWidth < 1800) {
+      leftOffset = -30; // Mid-size screens - shifted further right
+    } else {
+      leftOffset = -60; // Large Mac displays - shifted further right
+    }
 
     // Calculate how much to move left to center it
-    const targetCenter = (currentWidth - navbarWidth) / 2;
-    const currentRight = rightMargin;
-    const moveDistance = currentRight - targetCenter + leftOffset;
+    // The navbar should move from 24px from right to (screenWidth - navbarWidth)/2 from right
+    const targetRightPos = (currentWidth - navbarWidth) / 2;
+    const currentRightPos = rightMargin;
+    const moveDistance = targetRightPos - currentRightPos + leftOffset;
 
-    return `translateX(-${Math.max(0, moveDistance * smoothProgress)}px)`;
+    return `translateX(-${moveDistance * smoothProgress}px)`;
   };
 
   const getNavbarBackground = () => {

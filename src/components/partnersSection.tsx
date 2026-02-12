@@ -318,7 +318,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
             }}
           >
             <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider">
-              OUR PARTNERS
+              OUR EXCLUSIVE BRANDS
             </h2>
           </motion.div>
 
