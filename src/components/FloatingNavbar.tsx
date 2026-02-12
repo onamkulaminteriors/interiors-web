@@ -98,7 +98,7 @@ const FloatingNavbar = ({ activeSection, onBeginStoryClick, onNavClick }: Floati
     // Desktop still slides from right to left.
     if (deviceType === 'tablet') return 'none';
 
-    const moveDistance = smoothProgress * 300;
+    const moveDistance = smoothProgress * 200;
     return `translateX(-${moveDistance}px)`;
   };
 
