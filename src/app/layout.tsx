@@ -31,13 +31,13 @@ export const metadata: Metadata = {
     ],
 
     // Authors
-    authors: [{ name: 'OnamKulam Interiors' }],
+    authors: [{ name: 'Onamkulam Interiors' }],
 
     // Creator
-    creator: 'OnamKulam Interiors',
+    creator: 'Onamkulam Interiors',
 
     // Publisher
-    publisher: 'OnamKulam Interiors',
+    publisher: 'Onamkulam Interiors',
 
     // Robots
     robots: {
@@ -57,9 +57,9 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: 'https://onamkulaminteriors.com',
-        siteName: 'OnamKulam Interiors',
-        title: 'OnamKulam Interiors - Premium Interior Design & Architecture',
-        description: 'Transform your space with OnamKulam Interiors. We specialize in premium residential and commercial interior design, bringing your vision to life with innovative solutions.',
+        siteName: 'Onamkulam Interiors',
+        title: 'Onamkulam Interiors - Premium Interior Design & Architecture',
+        description: 'Transform your space with Onamkulam Interiors. We specialize in premium residential and commercial interior design, bringing your vision to life with innovative solutions.',
         images: [
             {
                 url: '/og-image.png',
@@ -74,8 +74,8 @@ export const metadata: Metadata = {
     // Twitter Card
     twitter: {
         card: 'summary_large_image',
-        title: 'OnamKulam Interiors - Premium Interior Design & Architecture',
-        description: 'Transform your space with OnamKulam Interiors. We specialize in premium residential and commercial interior design.',
+        title: 'Onamkulam Interiors - Premium Interior Design & Architecture',
+        description: 'Transform your space with Onamkulam Interiors. We specialize in premium residential and commercial interior design.',
         creator: '@onamkulam',
         images: ['/og-image.png'],
     },

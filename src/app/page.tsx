@@ -281,7 +281,7 @@ export default function HomePage() {
 
     useEffect(() => {
         document.documentElement.style.scrollBehavior = "auto";
-        document.title = "OnamKulam - Interior";
+        document.title = "Onamkulam Interiors";
         // Initialize contact scroll target to footer with offset to show it completely
         scrollTargets.current.contact = footerStart + sectionDuration;
         return () => {

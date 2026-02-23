@@ -1,5 +1,6 @@
 import React, { memo } from 'react'; // Import memo
 import logo from '../assets/images/LOGO 01.png';
+import heroImage from '../assets/hero/hero-image2.png';
 
 interface HeroProps {
   onExploreClick?: () => void;
@@ -13,7 +14,7 @@ const Hero = memo(({ onExploreClick }: HeroProps) => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${heroImage.src})`
         }}
       />
 
