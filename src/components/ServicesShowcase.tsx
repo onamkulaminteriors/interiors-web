@@ -83,14 +83,14 @@ const ServicesShowcase = () => {
         <div className="hidden lg:grid lg:grid-cols-5 h-full">
           {/* Left Side - Service List & Description */}
           <div
-            className="bg-stone-50 flex flex-col justify-center px-8 xl:px-16 py-16 col-span-2"
+            className="bg-stone-50 flex flex-col justify-center px-8 xl:px-16 pt-24 pb-8 xl:pt-16 xl:pb-16 col-span-2"
             onMouseLeave={handleMouseLeave}
           >
-            <div className="space-y-3 xl:space-y-4 mb-8">
+            <div className="space-y-1.5 xl:space-y-4 mb-4 xl:mb-8">
               {services.map((service, index) => (
                 <div
                   key={service.id}
-                  className={`flex items-center gap-4 xl:gap-6 py-2 xl:py-3 transition-all duration-300 ${hoveredIndex === index
+                  className={`flex items-center gap-3 xl:gap-6 py-1 xl:py-3 transition-all duration-300 ${hoveredIndex === index
                     ? 'text-gray-800'
                     : 'text-gray-400 hover:text-gray-600'
                     }`}
@@ -103,7 +103,7 @@ const ServicesShowcase = () => {
                     className="flex-1"
                   >
                     <h3
-                      className="text-base lg:text-lg xl:text-xl font-light cursor-pointer inline-block"
+                      className="text-sm lg:text-sm xl:text-xl font-light cursor-pointer inline-block"
                       onMouseEnter={() => handleMouseEnter(index)}
                     >
                       {service.title}
@@ -114,15 +114,15 @@ const ServicesShowcase = () => {
             </div>
 
             {/* Description Paragraph */}
-            <div className="max-w-md xl:max-w-lg">
-              <p className="text-gray-600 text-xs lg:text-sm xl:text-base leading-relaxed font-light">
+            <div className="max-w-xs xl:max-w-lg">
+              <p className="text-gray-600 text-xs xl:text-base leading-relaxed font-light">
                 {services[hoveredIndex].description}
               </p>
             </div>
           </div>
 
           {/* Right Side - Scroll Up Image Display */}
-          <div className="relative overflow-hidden bg-gray-100 col-span-3 p-8 xl:p-12">
+          <div className="relative overflow-hidden bg-gray-100 col-span-3 p-4 xl:p-12">
             <div className="relative h-full w-full overflow-hidden">
               <div
                 className="h-full w-full transition-transform duration-700 ease-in-out"

@@ -20,7 +20,7 @@ const Founder = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-white flex items-center justify-center relative overflow-hidden py-12">
+    <div className="min-h-screen w-full bg-white flex items-center justify-center relative overflow-hidden py-12 lg:pt-24 lg:pb-12 xl:pt-16 xl:pb-12">
       <div className="absolute inset-0 bg-white" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
