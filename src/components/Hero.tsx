@@ -1,4 +1,5 @@
 import React, { memo } from 'react'; // Import memo
+import Image from 'next/image';
 import logo from '../assets/images/LOGO 01.png';
 import heroImage from '../assets/hero/hero-image2.png';
 
@@ -10,13 +11,18 @@ interface HeroProps {
 const Hero = memo(({ onExploreClick }: HeroProps) => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-neutral-200">
-      {/* Background Image - Added will-change-transform */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url(${heroImage.src})`
-        }}
+      {/* Background Image - priority ensures eager loading with a <link rel="preload"> */}
+      <Image
+        src={heroImage}
+        alt=""
+        fill
+        priority
+        quality={85}
+        className="object-cover object-center"
+        sizes="100vw"
       />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/35" />
 
       {/* Header */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-16 pt-6">
