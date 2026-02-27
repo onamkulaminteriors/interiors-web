@@ -17,11 +17,10 @@ const Footer = memo(() => {
 
       {/* Main Content Wrapper */}
       {/* FIX: Added pt-28 for mobile navbar clearance, reset on desktop with lg:pt-0 */}
-      <div className="relative z-10 h-auto min-h-full flex flex-col pt-28 lg:pt-0">
+      <div className="relative z-10 h-auto min-h-full flex flex-col justify-center pt-28 lg:pt-0">
 
         {/* Top Section */}
-        {/* flex-1 ensures it tries to fill the screen (for desktop) */}
-        <div className="flex-1 px-8 lg:px-16 xl:px-20 pt-12 lg:pt-16 xl:pt-12">
+        <div className="px-8 lg:px-16 xl:px-20 pt-12 pb-10 lg:pt-16 xl:pt-12">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12">
 
@@ -32,6 +31,9 @@ const Footer = memo(() => {
                     <h1 className="text-white text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold tracking-tight">
                       ONAMKULAM
                     </h1>
+                    <p className="text-gray-400 text-xs lg:text-sm tracking-[0.25em] uppercase mt-1 font-light">
+                      Interiors
+                    </p>
                   </div>
 
                   <p className="text-gray-300 text-base lg:text-lg xl:text-lg 2xl:text-2xl leading-relaxed font-light max-w-md">

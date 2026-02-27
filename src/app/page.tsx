@@ -33,7 +33,13 @@ const layerStyle: React.CSSProperties = {
 };
 
 export default function HomePage() {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(() => {
+        // Only show the preloader on the very first visit within this browser session.
+        if (typeof window !== "undefined") {
+            return !sessionStorage.getItem("preloaderShown");
+        }
+        return false;
+    });
     const [windowHeight, setWindowHeight] = useState(typeof window !== 'undefined' ? window.innerHeight : 800);
 
     // --- NAV STATE ---
@@ -321,7 +327,7 @@ export default function HomePage() {
 
     return (
         <>
-            {loading && <Preloader onFinish={() => setLoading(false)} />}
+            {loading && <Preloader onFinish={() => { sessionStorage.setItem("preloaderShown", "1"); setLoading(false); }} />}
             <div className="relative overflow-hidden bg-black">
                 <div className="fixed inset-x-0 top-0 z-[100]">
                     <FloatingNavbar
