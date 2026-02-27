@@ -93,17 +93,17 @@ const TeamSection = () => {
       {/* Content Wrapper */}
       {/* pt-28: Pushes content down so Navbar doesn't cover it on mobile */}
       {/* lg:min-h-full lg:justify-center: Centers content vertically on desktop but allow growth */}
-      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 pb-12 lg:pt-20 lg:pb-10 lg:min-h-full lg:flex lg:flex-col lg:justify-center">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 pb-12 lg:pt-24 xl:pt-20 lg:pb-8 xl:pb-10 lg:min-h-full lg:flex lg:flex-col lg:justify-center">
 
         {/* Header */}
-        <div className={`mb-4 sm:mb-6 md:mb-8 transition-all duration-1000 ease-out delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 text-left">
+        <div className={`mb-3 sm:mb-4 lg:mb-3 xl:mb-8 transition-all duration-1000 ease-out delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-5xl font-bold text-gray-900 text-left">
             Latest Projects:
           </h1>
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 lg:gap-4 xl:gap-6">
 
           {/* Left Side - Description */}
           <div className={`lg:col-span-4 flex flex-col justify-center transition-all duration-1000 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
@@ -112,12 +112,12 @@ const TeamSection = () => {
                 <img
                   src={logoSvg.src}
                   alt="Logo"
-                  className="h-8 sm:h-10 w-8 sm:w-10 object-contain"
+                  className="h-8 sm:h-10 lg:h-7 lg:w-7 xl:h-10 xl:w-10 object-contain"
                 />
               </div>
 
               <div className="text-left">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold leading-tight text-gray-900 max-w-md mb-6">
+                <h2 className="text-base sm:text-lg lg:text-sm xl:text-xl font-bold leading-tight text-gray-900 max-w-md mb-3 xl:mb-6">
                   We are a passionate team of designers dedicated to transforming your vision into beautifully crafted spaces.
                 </h2>
 
@@ -137,13 +137,13 @@ const TeamSection = () => {
 
           {/* Right Side - Project Grid */}
           <div className={`lg:col-span-8 transition-all duration-1000 ease-out delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-16'}`}>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-2 sm:gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-2 lg:gap-2 xl:gap-3">
 
               {/* --- TOP ROW --- */}
               <div className="col-span-1 md:col-span-2">
                 <ProjectCard
                   project={projects[0]}
-                  heightClass="h-32 sm:h-48 md:h-52"
+                  heightClass="h-32 sm:h-48 lg:h-40 xl:h-52"
                   delay="delay-[400ms]"
                   isVisible={isVisible}
                 />
@@ -152,7 +152,7 @@ const TeamSection = () => {
               <div className="col-span-1 md:col-span-2">
                 <ProjectCard
                   project={projects[1]}
-                  heightClass="h-32 sm:h-48 md:h-52"
+                  heightClass="h-32 sm:h-48 lg:h-40 xl:h-52"
                   delay="delay-[500ms]"
                   isVisible={isVisible}
                 />
@@ -161,7 +161,7 @@ const TeamSection = () => {
               <div className="col-span-2 md:col-span-2">
                 <ProjectCard
                   project={projects[2]}
-                  heightClass="h-32 sm:h-48 md:h-52"
+                  heightClass="h-32 sm:h-48 lg:h-40 xl:h-52"
                   delay="delay-[600ms]"
                   isVisible={isVisible}
                 />
@@ -171,7 +171,7 @@ const TeamSection = () => {
               <div className="col-span-2 md:col-span-4">
                 <ProjectCard
                   project={projects[3]}
-                  heightClass="h-32 sm:h-36 md:h-40"
+                  heightClass="h-32 sm:h-36 lg:h-32 xl:h-40"
                   delay="delay-[700ms]"
                   isVisible={isVisible}
                   extraContent={(p: any) => (

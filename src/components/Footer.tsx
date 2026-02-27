@@ -21,20 +21,20 @@ const Footer = memo(() => {
 
         {/* Top Section */}
         {/* flex-1 ensures it tries to fill the screen (for desktop) */}
-        <div className="flex-1 px-8 lg:px-16 xl:px-24 pt-16 lg:pt-24">
+        <div className="flex-1 px-8 lg:px-16 xl:px-20 pt-12 lg:pt-16 xl:pt-12">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12">
 
               {/* Left Column - Brand Statement */}
               <div className="lg:col-span-5 flex flex-col justify-between">
                 <div>
-                  <div className="mb-8 lg:mb-12">
-                    <h1 className="text-white text-2xl lg:text-3xl xl:text-4xl font-bold tracking-tight">
+                  <div className="mb-6 lg:mb-8">
+                    <h1 className="text-white text-2xl lg:text-3xl xl:text-3xl 2xl:text-4xl font-bold tracking-tight">
                       ONAMKULAM
                     </h1>
                   </div>
 
-                  <p className="text-gray-300 text-lg lg:text-xl xl:text-2xl leading-relaxed font-light max-w-md">
+                  <p className="text-gray-300 text-base lg:text-lg xl:text-lg 2xl:text-2xl leading-relaxed font-light max-w-md">
                     We transform your<br />
                     vision into beautifully<br />
                     crafted spaces.
@@ -57,25 +57,25 @@ const Footer = memo(() => {
               {/* Middle Column - Navigation */}
               <div className="lg:col-span-3 lg:col-start-7">
                 <nav className="space-y-6">
-                  <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                  <a href="#" className="block text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl hover:text-gray-300 transition-colors duration-300">
                     Home
                   </a>
-                  <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                  <a href="#" className="block text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl hover:text-gray-300 transition-colors duration-300">
                     Projects
                   </a>
-                  <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                  <a href="#" className="block text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl hover:text-gray-300 transition-colors duration-300">
                     About Us
                   </a>
-                  <a href="/blogs" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                  <a href="/blogs" className="block text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl hover:text-gray-300 transition-colors duration-300">
                     Blog
                   </a>
-                  <a href="#" className="block text-white text-xl lg:text-2xl hover:text-gray-300 transition-colors duration-300">
+                  <a href="#" className="block text-white text-base lg:text-lg xl:text-xl 2xl:text-2xl hover:text-gray-300 transition-colors duration-300">
                     Contact
                   </a>
                 </nav>
 
-                <div className="mt-12 lg:mt-16">
-                  <p className="text-gray-400 text-base lg:text-lg">
+                <div className="mt-8 lg:mt-10">
+                  <p className="text-gray-400 text-sm lg:text-base xl:text-base 2xl:text-lg">
                     (099) 791-00-75
                   </p>
                 </div>
@@ -101,13 +101,13 @@ const Footer = memo(() => {
 
         {/* Bottom Section - Large Email */}
         {/* Added pb-12 for mobile scroll buffer */}
-        <div className="px-8 lg:px-16 xl:px-24 pb-12 lg:pb-24 pt-12 lg:pt-0">
+        <div className="px-8 lg:px-16 xl:px-20 pb-8 lg:pb-12 xl:pb-10 pt-8 lg:pt-0">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-6">
 
               <div className="flex-1">
                 {/* Responsive text size */}
-                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-bold leading-none tracking-tight break-words">
+                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-7xl font-bold leading-none tracking-tight break-words">
                   onamkulaminteriors@gmail.com
                 </h2>
               </div>
