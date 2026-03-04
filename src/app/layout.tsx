@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://onamkulaminteriors.com'),
 
     // Basic metadata
-    title: 'OnamKulam Interiors - Premium Interior Design & Architecture',
-    description: 'Transform your space with OnamKulam Interiors. We specialize in premium residential and commercial interior design, bringing your vision to life with innovative solutions.',
+    title: 'Onamkulam Interiors - Premium Interior Design & Architecture',
+    description: 'Transform your space with Onamkulam Interiors. We specialize in premium residential and commercial interior design, bringing your vision to life with innovative solutions.',
 
     // Keywords for SEO
     keywords: [
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         'home decor',
         'commercial interiors',
         'residential design',
-        'OnamKulam',
+        'Onamkulam',
         'interior designer',
         'space planning',
         'furniture design'
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
                 url: '/og-image.png',
                 width: 1200,
                 height: 630,
-                alt: 'OnamKulam Interiors - Premium Interior Design',
+                alt: 'Onamkulam Interiors - Premium Interior Design',
                 type: 'image/png',
             },
         ],
