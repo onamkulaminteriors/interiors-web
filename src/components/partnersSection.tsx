@@ -3,7 +3,7 @@ import { motion, useTransform, MotionValue } from 'framer-motion';
 import centuryPly from '../assets/partners/Century_ply.png';
 import mikasaPly from '../assets/partners/mikasa_ply.png';
 import greenPly from '../assets/partners/green_ply.png';
-
+import austinPly from '../assets/partners/austin_ply.png'
 type Brand = {
   name: string;
   position?: string;
@@ -115,7 +115,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     { name: 'Century Ply', image: centuryPly.src },
     { name: 'Mikasa', image: mikasaPly.src },
     { name: 'greenPly', image: greenPly.src },
-    { name: 'WOLF', image: null },
+    { name: 'Austin Ply', image: austinPly.src },
     { name: 'SIEMENS', image: null },
     { name: 'B&O', image: null, subtitle: 'BANG & OLUFSEN' },
     { name: 'davide groppi', image: null },
