@@ -2,6 +2,10 @@ import { useRef, useState, memo } from "react";
 import { motion, useTransform, MotionValue, useMotionValueEvent } from "framer-motion";
 import { useRouter } from 'next/navigation';
 
+import imgRenovation from '../assets/services/renovation.png';
+import imgInteriorDesign from '../assets/services/interior_design.png';
+import imgSpacePlanning from '../assets/services/space_planning.png';
+
 interface ServicesScrollProps {
   scrollProgress: MotionValue<number>;
 }
@@ -12,21 +16,21 @@ const services = [
     id: 1,
     title: "Renovation & Remodeling",
     images: [
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1600&q=80",
+      imgRenovation.src,
     ],
   },
   {
     id: 2,
     title: "Interior Design",
     images: [
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      imgInteriorDesign.src,
     ],
   },
   {
     id: 3,
     title: "Space Planning",
     images: [
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+      imgSpacePlanning.src,
     ],
   },
 ];
