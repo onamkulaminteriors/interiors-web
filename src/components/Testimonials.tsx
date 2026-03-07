@@ -74,7 +74,9 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
   const isSecondSection = index === 1;
   const textColor = isSecondSection ? 'text-white' : 'text-black';
   const bgColor = isSecondSection ? 'bg-black' : 'bg-white';
-  const mobileOverlayBg = isSecondSection ? 'bg-black/70' : 'bg-white/70';
+  const mobileOverlayBg = isSecondSection
+    ? 'bg-gradient-to-t from-black/90 via-black/30 to-transparent'
+    : 'bg-gradient-to-t from-white/90 via-white/30 to-transparent';
   const mobileTextColor = isSecondSection ? 'text-white' : 'text-black';
 
   // Optimization: we can use style display none if mostly out of view, but framer motion handles simple transforms efficiently.
@@ -95,16 +97,16 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
       {/* Image Section */}
       <div className="w-full h-1/2 lg:w-2/3 lg:h-full relative overflow-hidden">
         <motion.div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-center will-change-transform"
           style={{
             backgroundImage: `url(${testimonial.projectImage})`,
             scale: scale,
-            // Fixed 'translateZ' handles hardware acceleration
+            translateZ: 0, // Forces GPU acceleration
           }}
         />
 
         {/* Mobile/Tablet Overlay Content */}
-        <div className={`lg:hidden absolute inset-0 ${mobileOverlayBg} flex flex-col justify-end p-6 md:p-10 ${mobileTextColor}`}>
+        <div className={`lg:hidden absolute bottom-0 left-0 right-0 pt-32 pb-6 px-6 md:px-10 flex flex-col justify-end bg-gradient-to-t ${isSecondSection ? 'from-black/90 to-transparent text-white' : 'from-white/95 to-transparent text-black'}`}>
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{testimonial.number}</h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2">
             {testimonial.project}
