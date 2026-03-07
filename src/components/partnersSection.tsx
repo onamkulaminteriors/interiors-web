@@ -308,7 +308,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
 
         {/* --- SECTION 3: PARTNERS --- */}
         <motion.div
-          className="absolute inset-0 flex flex-col justify-center items-center pt-20 sm:pt-0"
+          className="absolute inset-0 flex flex-col justify-center items-center px-0 pt-16 sm:pt-12 lg:pt-0"
           style={{
             opacity: section3Opacity,
             transform: section3Transform,
@@ -316,14 +316,17 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
           }}
         >
           <motion.div
-            className="mb-8 md:mb-12 lg:mb-16 text-center px-4"
-            style={{
-              opacity: section3TitleOpacity,
-              transform: section3TitleTransform,
-            }}
+            className="mb-4 sm:mb-8 md:mb-12 lg:mb-14 text-center px-4 w-full"
           >
-            <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider">
-              OUR EXCLUSIVE BRANDS
+            <h2 className="text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider flex flex-col items-center leading-none sm:leading-tight gap-0.5 sm:gap-1 md:gap-2">
+              {['OUR', 'EXCLUSIVE', 'BRANDS'].map((word, idx) => (
+                <TitleWord
+                  key={word}
+                  text={word}
+                  index={idx}
+                  progress={partnersProgress}
+                />
+              ))}
             </h2>
           </motion.div>
 
@@ -343,7 +346,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
               {[...partners, ...partners].map((p, i) => (
                 <div
                   key={`${p.name}-${i}`}
-                  className="min-w-[180px] sm:min-w-[220px] md:min-w-[260px] lg:min-w-[280px] h-24 sm:h-28 md:h-32 lg:h-40 border rounded-lg flex flex-col items-center justify-center flex-shrink-0 px-6 transition-colors duration-200 bg-transparent"
+                  className="min-w-[130px] sm:min-w-[180px] md:min-w-[220px] lg:min-w-[260px] h-20 sm:h-24 md:h-28 lg:h-36 border rounded-lg flex flex-col items-center justify-center flex-shrink-0 px-3 sm:px-6 transition-colors duration-200 bg-transparent"
                   style={{ borderColor: 'inherit' }}
                 >
                   {p.image ? (
