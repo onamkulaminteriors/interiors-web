@@ -1,9 +1,18 @@
 import React, { useEffect, useState, memo } from 'react';
 import { motion, useTransform, MotionValue } from 'framer-motion';
+
+//image imports
 import centuryPly from '../assets/partners/Century_ply.png';
 import mikasaPly from '../assets/partners/mikasa_ply.png';
 import greenPly from '../assets/partners/green_ply.png';
 import austinPly from '../assets/partners/austin_ply.png'
+import greenLam from '../assets/partners/greenlam.png'
+import virgo from '../assets/partners/virgo.png'
+import stylam from '../assets/partners/stylam.png'
+import blum from '../assets/partners/blum.png'
+
+
+
 type Brand = {
   name: string;
   position?: string;
@@ -116,12 +125,13 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     { name: 'Mikasa', image: mikasaPly.src },
     { name: 'greenPly', image: greenPly.src },
     { name: 'Austin Ply', image: austinPly.src },
-    { name: 'SIEMENS', image: null },
-    { name: 'B&O', image: null, subtitle: 'BANG & OLUFSEN' },
-    { name: 'davide groppi', image: null },
-    { name: 'GAGGENAU', image: null },
-    { name: 'SUB•ZERO', image: null },
-    { name: 'smeg', image: null },
+    { name: 'GreenLam', image: greenLam.src },
+    { name: 'Virgo', image: virgo.src, subtitle: 'BANG & OLUFSEN' },
+    { name: 'Stylam', image: stylam.src },
+    { name: 'Blum', image: blum.src },
+    // { name: 'GAGGENAU', image: null },
+    // { name: 'SUB•ZERO', image: null },
+    // { name: 'smeg', image: null },
   ];
 
   // --- TOP LEVEL HOOKS ---
