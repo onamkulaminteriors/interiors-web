@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
+import imgKerala from '../assets/blogs/kerala_modern.png';
+import imgSmallHome from '../assets/blogs/small_home.png';
+import imgKitchen from '../assets/blogs/modular_kitchen.png';
+import imgMaterials from '../assets/blogs/materials.png';
+import imgLighting from '../assets/blogs/lighting.png';
 
 interface BlogPost {
     id: string;
@@ -26,7 +31,7 @@ const blogPosts: BlogPost[] = [
         category: 'Interior Design',
         date: 'Mar 2, 2026',
         readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop',
+        image: imgKerala.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Design Team'
@@ -40,7 +45,7 @@ const blogPosts: BlogPost[] = [
         category: 'Home Planning',
         date: 'Feb 25, 2026',
         readTime: '5 min read',
-        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+        image: imgSmallHome.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Interior Design Experts'
@@ -54,7 +59,7 @@ const blogPosts: BlogPost[] = [
         category: 'Kitchen Design',
         date: 'Feb 18, 2026',
         readTime: '7 min read',
-        image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&h=600&fit=crop',
+        image: imgKitchen.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Kitchen Design Specialists'
@@ -68,7 +73,7 @@ const blogPosts: BlogPost[] = [
         category: 'Materials & Finishes',
         date: 'Feb 10, 2026',
         readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&h=600&fit=crop',
+        image: imgMaterials.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Material Consultants'
@@ -82,7 +87,7 @@ const blogPosts: BlogPost[] = [
         category: 'Lighting Design',
         date: 'Feb 1, 2026',
         readTime: '5 min read',
-        image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop',
+        image: imgLighting.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Lighting & Design Team'

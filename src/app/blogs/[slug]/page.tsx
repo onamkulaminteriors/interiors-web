@@ -4,6 +4,11 @@ import Footer from "@/components/Footer";
 import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import imgKerala from "@/assets/blogs/kerala_modern.png";
+import imgSmallHome from "@/assets/blogs/small_home.png";
+import imgKitchen from "@/assets/blogs/modular_kitchen.png";
+import imgMaterials from "@/assets/blogs/materials.png";
+import imgLighting from "@/assets/blogs/lighting.png";
 
 // Blog post data (same as in BlogSection.tsx)
 const blogPosts = [
@@ -15,7 +20,7 @@ const blogPosts = [
         category: 'Interior Design',
         date: 'Mar 1, 2026',
         readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1200&h=800&fit=crop',
+        image: imgKerala.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Interior Design Team'
@@ -50,7 +55,7 @@ Wood, stone, and textured finishes remain popular in Kerala homes as they comple
         category: 'Home Planning',
         date: 'Feb 24, 2026',
         readTime: '5 min read',
-        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&h=800&fit=crop',
+        image: imgSmallHome.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Design Experts'
@@ -82,7 +87,7 @@ Wood, stone, and textured finishes remain popular in Kerala homes as they comple
         category: 'Kitchen Design',
         date: 'Feb 18, 2026',
         readTime: '7 min read',
-        image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=1200&h=800&fit=crop',
+        image: imgKitchen.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Kitchen Design Specialists'
@@ -119,7 +124,7 @@ Best suited for compact apartments where space is limited.</p>
         category: 'Materials & Finishes',
         date: 'Feb 10, 2026',
         readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1200&h=800&fit=crop',
+        image: imgMaterials.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Material Experts'
@@ -151,7 +156,7 @@ Best suited for compact apartments where space is limited.</p>
         category: 'Lighting Design',
         date: 'Feb 2, 2026',
         readTime: '5 min read',
-        image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&h=800&fit=crop',
+        image: imgLighting.src,
         author: {
             name: 'Onamkulam Interiors',
             role: 'Lighting Design Team'
