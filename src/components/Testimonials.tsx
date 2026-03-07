@@ -1,6 +1,7 @@
 import { useRef, memo, useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, useTransform, MotionValue } from "framer-motion";
+import Link from "next/link";
 
 interface TestimonialScrollProps {
   scrollProgress: MotionValue<number>;
@@ -188,17 +189,26 @@ const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
       ))}
 
       {/* Progress indicator */}
-      <div className="absolute bottom-6 right-6 z-[60]">
-        <div className="flex space-x-2">
-          {testimonials.map((_, index) => (
-            <TestimonialIndicator
-              key={index}
-              index={index}
-              totalCards={totalCards}
-              progress={scrollProgress}
-            />
-          ))}
-        </div>
+      <div className="absolute bottom-6 right-6 z-[60] flex items-center gap-2">
+        {testimonials.map((_, index) => (
+          <TestimonialIndicator
+            key={index}
+            index={index}
+            totalCards={totalCards}
+            progress={scrollProgress}
+          />
+        ))}
+      </div>
+
+      {/* View All button — centered at bottom */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[60]">
+        <Link
+          href="/testimonials"
+          className="flex items-center gap-2 bg-black/40 hover:bg-black/60 border border-white/20 backdrop-blur-md text-white text-xs font-medium px-5 py-2.5 rounded-full transition-all duration-300 hover:scale-105 hover:gap-3 group"
+        >
+          <span className="tracking-wide">View All Testimonials</span>
+          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+        </Link>
       </div>
 
       {/* Scroll hint text - appears briefly at the start */}
