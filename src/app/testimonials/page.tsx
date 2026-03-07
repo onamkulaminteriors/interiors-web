@@ -18,6 +18,7 @@ const allTestimonials = [
         location: "San Francisco, CA",
         projectImage:
             "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -30,6 +31,7 @@ const allTestimonials = [
         location: "New York, NY",
         projectImage:
             "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+        authorImage: null,
         rating: 5,
     },
     {
@@ -42,6 +44,7 @@ const allTestimonials = [
         location: "Los Angeles, CA",
         projectImage:
             "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -54,6 +57,7 @@ const allTestimonials = [
         location: "Kerala, India",
         projectImage:
             "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -66,6 +70,7 @@ const allTestimonials = [
         location: "Dubai, UAE",
         projectImage:
             "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -78,6 +83,7 @@ const allTestimonials = [
         location: "Kochi, India",
         projectImage:
             "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
+        authorImage: null,
         rating: 5,
     },
     {
@@ -90,6 +96,7 @@ const allTestimonials = [
         location: "Bangalore, India",
         projectImage:
             "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop",
+        authorImage: null,
         rating: 5,
     },
     {
@@ -102,6 +109,7 @@ const allTestimonials = [
         location: "Singapore",
         projectImage:
             "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -114,6 +122,7 @@ const allTestimonials = [
         location: "Riyadh, Saudi Arabia",
         projectImage:
             "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&h=600&fit=crop",
+        authorImage: null,
         rating: 5,
     },
 ];
@@ -177,11 +186,33 @@ const TestimonialCard = ({
                     &ldquo;{testimonial.quote}&rdquo;
                 </p>
 
-                <div className="pt-2 border-t border-gray-100">
-                    <p className="font-semibold text-gray-900 text-sm">
-                        {testimonial.author}
-                    </p>
-                    <p className="text-gray-500 text-xs mt-0.5">{testimonial.role}</p>
+                <div className="pt-2 border-t border-gray-100 flex items-center gap-3">
+                    {/* Avatar Component */}
+                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-100 border border-black/5 flex items-center justify-center">
+                        {testimonial.authorImage ? (
+                            <img
+                                src={testimonial.authorImage}
+                                alt={testimonial.author}
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <span className="text-gray-500 font-semibold text-xs tracking-wider">
+                                {testimonial.author
+                                    .split(" ")
+                                    .map((n: string) => n[0])
+                                    .join("")
+                                    .toUpperCase()
+                                    .slice(0, 2)}
+                            </span>
+                        )}
+                    </div>
+
+                    <div>
+                        <p className="font-semibold text-gray-900 text-sm">
+                            {testimonial.author}
+                        </p>
+                        <p className="text-gray-500 text-xs mt-0.5">{testimonial.role}</p>
+                    </div>
                 </div>
             </div>
         </div>

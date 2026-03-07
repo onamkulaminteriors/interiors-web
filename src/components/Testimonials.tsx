@@ -17,6 +17,7 @@ const testimonials = [
     project: "Sanur House",
     location: "San Francisco, CA",
     projectImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
+    authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
     number: "01",
   },
   {
@@ -27,6 +28,7 @@ const testimonials = [
     project: "Modern Loft",
     location: "New York, NY",
     projectImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
+    authorImage: null, // Tests the initials fallback
     number: "02",
   },
   {
@@ -37,6 +39,7 @@ const testimonials = [
     project: "Urban Retreat",
     location: "Los Angeles, CA",
     projectImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&h=1080&fit=crop",
+    authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
     number: "03",
   },
 ];
@@ -122,10 +125,32 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
           "{testimonial.quote}"
         </p>
 
-        <div className="space-y-1">
-          <p className="font-medium text-sm sm:text-base md:text-lg">{testimonial.author}</p>
-          <p className={`text-xs sm:text-sm md:text-base ${isSecondSection ? 'opacity-70' : 'opacity-60'}`}>{testimonial.role}</p>
-          <p className={`hidden lg:block text-xs sm:text-sm ${isSecondSection ? 'opacity-50' : 'opacity-40'}`}>{testimonial.location}</p>
+        <div className="flex items-center gap-4 mt-2">
+          {/* Avatar Component */}
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 border border-black/10 flex items-center justify-center">
+            {testimonial.authorImage ? (
+              <img
+                src={testimonial.authorImage}
+                alt={testimonial.author}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <span className="text-gray-500 font-semibold text-sm sm:text-base">
+                {testimonial.author
+                  .split(" ")
+                  .map((n: string) => n[0])
+                  .join("")
+                  .toUpperCase()
+                  .slice(0, 2)}
+              </span>
+            )}
+          </div>
+
+          <div className="space-y-0.5">
+            <p className="font-medium text-sm sm:text-base md:text-lg">{testimonial.author}</p>
+            <p className={`text-xs sm:text-sm md:text-base ${isSecondSection ? 'opacity-70' : 'opacity-60'}`}>{testimonial.role}</p>
+            <p className={`hidden lg:block text-xs sm:text-sm ${isSecondSection ? 'opacity-50' : 'opacity-40'}`}>{testimonial.location}</p>
+          </div>
         </div>
 
         <div className="mt-6 lg:mt-8 flex items-center justify-center lg:justify-start gap-2 cursor-pointer group">
