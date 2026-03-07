@@ -116,9 +116,9 @@ const Footer = memo(() => {
 
               <div className="lg:text-right flex-shrink-0">
                 <div className="text-gray-400 text-base lg:text-lg space-y-1">
-                  <p>France, Paris</p>
-                  <p>Str. Beliеvein Yourself 29</p>
-                  <p>App. 390</p>
+                  <p>Onamkulam Interiors,</p>
+                  <p>Ettumanoor</p>
+                  <p>Kottayam - 686631</p>
                 </div>
               </div>
             </div>
