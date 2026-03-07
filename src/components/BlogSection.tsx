@@ -20,86 +20,72 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
     {
         id: '01',
-        slug: 'minimalist-living-spaces',
-        title: 'The Art of Minimalist Living Spaces',
-        excerpt: 'Discover how less can truly be more when it comes to creating serene, functional living environments that nurture the soul.',
-        category: 'Design Philosophy',
-        date: 'Feb 8, 2026',
-        readTime: '5 min read',
-        image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&h=600&fit=crop',
+        slug: 'modern-kerala-home-interior-design-ideas',
+        title: 'Modern Kerala Home Interior Design Ideas for 2026',
+        excerpt: 'Discover how modern design blends with traditional Kerala architecture to create elegant, functional homes that feel both contemporary and timeless.',
+        category: 'Interior Design',
+        date: 'Mar 2, 2026',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&h=600&fit=crop',
         author: {
-            name: 'Sarah Mitchell',
-            role: 'Lead Designer'
+            name: 'Onamkulam Interiors',
+            role: 'Design Team'
         }
     },
     {
         id: '02',
-        slug: 'sustainable-materials',
-        title: 'Sustainable Materials in Modern Interior Design',
-        excerpt: 'Exploring eco-friendly choices that don\'t compromise on style or luxury in contemporary home design.',
-        category: 'Sustainability',
-        date: 'Feb 5, 2026',
-        readTime: '7 min read',
-        image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop',
+        slug: 'space-saving-interior-design-small-homes',
+        title: 'Space-Saving Interior Design Ideas for Small Homes',
+        excerpt: 'Smart interior planning can make even compact homes feel spacious. Learn how clever layouts, built-in storage, and multifunctional furniture transform small spaces.',
+        category: 'Home Planning',
+        date: 'Feb 25, 2026',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
         author: {
-            name: 'Michael Chen',
-            role: 'Sustainability Expert'
+            name: 'Onamkulam Interiors',
+            role: 'Interior Design Experts'
         }
     },
     {
         id: '03',
-        slug: 'color-psychology',
-        title: 'Color Psychology in Home Interiors',
-        excerpt: 'How the right color palette can transform mood, productivity, and overall well-being in your living spaces.',
-        category: 'Color Theory',
-        date: 'Feb 1, 2026',
-        readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop',
+        slug: 'modular-kitchen-design-guide',
+        title: 'Complete Guide to Designing a Perfect Modular Kitchen',
+        excerpt: 'A modular kitchen is the heart of a modern home. From layout planning to material selection, explore everything you need to create a functional and stylish kitchen.',
+        category: 'Kitchen Design',
+        date: 'Feb 18, 2026',
+        readTime: '7 min read',
+        image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&h=600&fit=crop',
         author: {
-            name: 'Emma Rodriguez',
-            role: 'Color Specialist'
+            name: 'Onamkulam Interiors',
+            role: 'Kitchen Design Specialists'
         }
     },
     {
         id: '04',
-        slug: 'smart-home-integration',
-        title: 'Smart Home Integration for Luxury Living',
-        excerpt: 'Seamlessly blending cutting-edge technology with elegant design for the modern smart home experience.',
-        category: 'Technology',
-        date: 'Jan 28, 2026',
-        readTime: '8 min read',
-        image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop',
+        slug: 'best-materials-for-home-interiors',
+        title: 'Choosing the Best Materials for Home Interiors',
+        excerpt: 'The durability and beauty of your interiors depend heavily on material choices. Learn about plywood, laminates, acrylic, and other materials used in premium interiors.',
+        category: 'Materials & Finishes',
+        date: 'Feb 10, 2026',
+        readTime: '6 min read',
+        image: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=800&h=600&fit=crop',
         author: {
-            name: 'David Park',
-            role: 'Tech Integration Specialist'
+            name: 'Onamkulam Interiors',
+            role: 'Material Consultants'
         }
     },
     {
         id: '05',
-        slug: 'heritage-homes-renovation',
-        title: 'Reviving Heritage Homes with Contemporary Flair',
-        excerpt: 'The delicate balance of preserving historical charm while introducing modern comfort and functionality.',
-        category: 'Renovation',
-        date: 'Jan 25, 2026',
-        readTime: '9 min read',
-        image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=800&h=600&fit=crop',
+        slug: 'lighting-tips-for-beautiful-home-interiors',
+        title: 'Lighting Tips to Transform Your Home Interiors',
+        excerpt: 'Lighting can dramatically influence how a space looks and feels. Discover how layered lighting techniques enhance aesthetics and functionality in modern homes.',
+        category: 'Lighting Design',
+        date: 'Feb 1, 2026',
+        readTime: '5 min read',
+        image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&h=600&fit=crop',
         author: {
-            name: 'Olivia Thompson',
-            role: 'Heritage Specialist'
-        }
-    },
-    {
-        id: '06',
-        slug: 'lighting-design',
-        title: 'Lighting Design: The Invisible Architecture',
-        excerpt: 'Understanding how strategic lighting can sculpt spaces, create ambiance, and highlight architectural features.',
-        category: 'Lighting',
-        date: 'Jan 20, 2026',
-        readTime: '6 min read',
-        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop',
-        author: {
-            name: 'James Wilson',
-            role: 'Lighting Designer'
+            name: 'Onamkulam Interiors',
+            role: 'Lighting & Design Team'
         }
     }
 ];
@@ -197,18 +183,19 @@ const BlogSection = () => {
                     ))}
                 </div>
 
-                {/* Load More Button */}
+                {/* End of Blog Indicator */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="mt-12 lg:mt-16 text-center"
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="mt-16 lg:mt-24 flex flex-col items-center justify-center text-center space-y-4"
                 >
-                    <button className="inline-flex items-center gap-3 px-8 py-4 bg-[#8B6F47] text-white font-light text-sm sm:text-base tracking-wide hover:bg-[#6F5838] transition-colors duration-300 rounded-lg group">
-                        <span>Explore More Stories</span>
-                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                    </button>
+                    <div className="w-12 h-[1px] bg-gray-300"></div>
+                    <p className="text-gray-400 text-sm font-light tracking-widest uppercase">
+                        End of Articles
+                    </p>
+                    <div className="w-12 h-[1px] bg-gray-300"></div>
                 </motion.div>
             </div>
         </section>
