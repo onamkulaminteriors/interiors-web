@@ -1,5 +1,8 @@
 import React, { useEffect, useState, memo } from 'react';
 import { motion, useTransform, MotionValue } from 'framer-motion';
+import centuryPly from '../assets/partners/Century_ply.png';
+import mikasaPly from '../assets/partners/mikasa_ply.png';
+import greenPly from '../assets/partners/green_ply.png';
 
 type Brand = {
   name: string;
@@ -109,14 +112,16 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
   ];
 
   const partners = [
-    { name: 'hansgrohe', logo: 'hansgrohe' },
-    { name: 'WOLF', logo: 'WOLF' },
-    { name: 'SIEMENS', logo: 'SIEMENS' },
-    { name: 'BANG & OLUFSEN', logo: 'B&O', subtitle: 'BANG & OLUFSEN' },
-    { name: 'davide groppi', logo: 'davide groppi' },
-    { name: 'GAGGENAU', logo: 'GAGGENAU' },
-    { name: 'SUB-ZERO', logo: 'SUB•ZERO' },
-    { name: 'smeg', logo: '•••smeg' },
+    { name: 'Century Ply', image: centuryPly.src },
+    { name: 'Mikasa', image: mikasaPly.src },
+    { name: 'greenPly', image: greenPly.src },
+    { name: 'WOLF', image: null },
+    { name: 'SIEMENS', image: null },
+    { name: 'B&O', image: null, subtitle: 'BANG & OLUFSEN' },
+    { name: 'davide groppi', image: null },
+    { name: 'GAGGENAU', image: null },
+    { name: 'SUB•ZERO', image: null },
+    { name: 'smeg', image: null },
   ];
 
   // --- TOP LEVEL HOOKS ---
@@ -338,24 +343,23 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
               {[...partners, ...partners].map((p, i) => (
                 <div
                   key={`${p.name}-${i}`}
-                  className="min-w-[180px] sm:min-w-[220px] md:min-w-[260px] lg:min-w-[280px] h-24 sm:h-28 md:h-32 lg:h-40 border rounded-lg flex flex-col items-center justify-center flex-shrink-0 transition-colors duration-200 bg-transparent"
-                  style={{
-                    borderColor: 'inherit'
-                  }}
+                  className="min-w-[180px] sm:min-w-[220px] md:min-w-[260px] lg:min-w-[280px] h-24 sm:h-28 md:h-32 lg:h-40 border rounded-lg flex flex-col items-center justify-center flex-shrink-0 px-6 transition-colors duration-200 bg-transparent"
+                  style={{ borderColor: 'inherit' }}
                 >
-                  {p.name === 'BANG & OLUFSEN' ? (
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="max-w-[70%] max-h-[60%] w-auto h-auto object-contain"
+                      style={{ mixBlendMode: 'multiply' }}
+                    />
+                  ) : p.subtitle ? (
                     <div className="text-center">
-                      <h3 className="text-base sm:text-lg md:text-xl font-light tracking-wide">B&O</h3>
-                      <p className="text-xs sm:text-sm mt-1 tracking-wider opacity-60">
-                        BANG & OLUFSEN
-                      </p>
-                    </div>
-                  ) : p.name === 'WOLF' ? (
-                    <div className="border px-3 py-1.5 border-current">
-                      <h3 className="text-sm sm:text-base md:text-lg font-light tracking-wider">{p.logo}</h3>
+                      <h3 className="text-base sm:text-lg md:text-xl font-light tracking-wide">{p.name}</h3>
+                      <p className="text-xs sm:text-sm mt-1 tracking-wider opacity-60">{p.subtitle}</p>
                     </div>
                   ) : (
-                    <h3 className="text-sm sm:text-base md:text-lg font-light tracking-wide px-2">{p.logo}</h3>
+                    <h3 className="text-sm sm:text-base md:text-lg font-light tracking-wide px-2 text-center">{p.name}</h3>
                   )}
                 </div>
               ))}
