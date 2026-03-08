@@ -1,16 +1,30 @@
 import React, { useEffect, useState, memo } from 'react';
 import { motion, useTransform, MotionValue } from 'framer-motion';
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+});
 
 //image imports
-import centuryPly from '../assets/partners/Century_ply.png';
-import mikasaPly from '../assets/partners/mikasa_ply.png';
-import greenPly from '../assets/partners/green_ply.png';
-import austinPly from '../assets/partners/austin_ply.png'
-import greenLam from '../assets/partners/greenlam.png'
-import virgo from '../assets/partners/virgo.png'
-import stylam from '../assets/partners/stylam.png'
-import blum from '../assets/partners/blum.png'
-import winnext from '../assets/partners/winnext.png'
+import winExt from '../assets/partners/1.png';
+import rehau from '../assets/partners/2.png';
+import master_edge from '../assets/partners/3.png';
+import e3 from '../assets/partners/4.png'
+import hopo from '../assets/partners/5.png'
+import hafele from '../assets/partners/6.png'
+import ebco from '../assets/partners/7.png'
+import hettich from '../assets/partners/8.png'
+import blum from '../assets/partners/9.png'
+import stylam from '../assets/partners/10.png'
+import virgo from '../assets/partners/11.png'
+import mikasa_laminates from '../assets/partners/12.png'
+import mikasa_ply from '../assets/partners/13.png'
+import greenlam from '../assets/partners/14.png'
+import austin from '../assets/partners/15.png'
+import greenply from '../assets/partners/16.png'
+import centuryPly from '../assets/partners/17.png'
 
 
 
@@ -122,15 +136,41 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
   ];
 
   const partners = [
+    { name: 'Winnext', image: winExt.src },
+    { name: 'Rehau', image: rehau.src },
+    { name: 'Ebco', image: ebco.src },
+    { name: 'Master Edge', image: master_edge.src },
+    { name: 'E3', image: e3.src },
+    { name: 'Hopo', image: hopo.src },
+    { name: 'Hafele', image: hafele.src },
+    { name: 'Mikasa Laminates', image: mikasa_laminates.src },
+    { name: 'Mikasa', image: mikasa_ply.src },
+    { name: 'Green Ply', image: greenply.src },
+    { name: 'Austin Ply', image: austin.src },
+    { name: 'Green Lam', image: greenlam.src },
     { name: 'Century Ply', image: centuryPly.src },
-    { name: 'Mikasa', image: mikasaPly.src },
-    { name: 'greenPly', image: greenPly.src },
-    { name: 'Austin Ply', image: austinPly.src },
-    { name: 'GreenLam', image: greenLam.src },
-    { name: 'Virgo', image: virgo.src, subtitle: 'BANG & OLUFSEN' },
     { name: 'Stylam', image: stylam.src },
     { name: 'Blum', image: blum.src },
-    { name: 'Winnext', image: winnext.src },
+    { name: 'Virgo', image: virgo.src },
+    { name: 'Hettich', image: hettich.src ,subtitle: 'BANG & OLUFSEN'},
+    
+
+    // { name: 'Mikasa', image: mikasaPly.src },
+    // { name: 'greenPly', image: greenPly.src },
+    // { name: 'Austin Ply', image: austinPly.src },
+    // { name: 'GreenLam', image: greenLam.src },
+    // { name: 'Virgo', image: virgo.src, subtitle: 'BANG & OLUFSEN' },
+    // { name: 'Stylam', image: stylam.src },
+    // { name: 'Blum', image: blum.src },
+    // { name: 'Winnext', image: winnext.src },
+    // { name: 'Winnext', image: ten.src },
+    // { name: 'Winnext', image: eleven.src },
+    // { name: 'Winnext', image: twelve.src },
+    // { name: 'Winnext', image: thirteen.src },
+    // { name: 'Winnext', image: fourteen.src },
+    // { name: 'Winnext', image: fifteen.src },
+    // { name: 'Winnext', image: sixteen.src },
+    // { name: 'Winnext', image: seventeen.src },
     // { name: 'GAGGENAU', image: null },
     // { name: 'SUB•ZERO', image: null },
     // { name: 'smeg', image: null },
@@ -330,7 +370,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
           <motion.div
             className="mb-4 sm:mb-8 md:mb-12 lg:mb-14 text-center px-4 w-full"
           >
-            <h2 className="text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider flex flex-col items-center leading-none sm:leading-tight gap-0.5 sm:gap-1 md:gap-2">
+            <h2 className={`text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider flex flex-col items-center leading-none sm:leading-tight gap-0.5 sm:gap-1 md:gap-2 ${poppins.className}`}>
               {['OUR', 'EXCLUSIVE', 'BRANDS'].map((word, idx) => (
                 <TitleWord
                   key={word}
@@ -373,10 +413,10 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
                       className="max-w-[70%] max-h-[60%] w-auto h-auto object-contain"
                       style={{ mixBlendMode: 'multiply' }}
                     />
-                  ) : p.subtitle ? (
+                  ) : p?.subtitle ? (
                     <div className="text-center">
                       <h3 className="text-base sm:text-lg md:text-xl font-light tracking-wide">{p.name}</h3>
-                      <p className="text-xs sm:text-sm mt-1 tracking-wider opacity-60">{p.subtitle}</p>
+                      <p className="text-xs sm:text-sm mt-1 tracking-wider opacity-60">{p?.subtitle}</p>
                     </div>
                   ) : (
                     <h3 className="text-sm sm:text-base md:text-lg font-light tracking-wide px-2 text-center">{p.name}</h3>
