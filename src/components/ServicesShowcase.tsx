@@ -136,12 +136,15 @@ const ServicesShowcase = () => {
                 className="h-full w-full transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateY(-${hoveredIndex * 100}%)` }}
               >
-                {services.map((service) => (
+                {services.map((service, index) => (
                   <div key={service.id} className="h-full w-full flex-shrink-0 relative">
                     <img
                       src={service.image}
                       alt={service.title}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      decoding="async"
                       className="w-full h-full object-cover"
+                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
                     />
                     <div className="absolute inset-0 bg-black/5"></div>
                   </div>
@@ -192,7 +195,10 @@ const ServicesShowcase = () => {
               <img
                 src={services[hoveredIndex].image}
                 alt={services[hoveredIndex].title}
+                loading={hoveredIndex === 0 ? "eager" : "lazy"}
+                decoding="async"
                 className="w-full h-full object-cover transition-all duration-700 ease-out"
+                style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
               />
               <div className="absolute inset-0 bg-black/5"></div>
             </div>
