@@ -1,5 +1,13 @@
 import { useState, useEffect } from 'react';
 
+import one from '../assets/process/1.jpg';
+import two from '../assets/process/2.jpg';
+import three from '../assets/process/3.jpg';
+import four from '../assets/process/4.jpg';
+import five from '../assets/process/5.jpg';
+import six from '../assets/process/6.jpg';
+import seven from '../assets/process/7.jpg';
+
 const ServicesShowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [isUserInteracting, setIsUserInteracting] = useState<boolean>(false);
@@ -9,49 +17,49 @@ const ServicesShowcase = () => {
       id: '01',
       title: 'Consultation & Vision',
       description: 'Your story begins with us listening. Our experts visit your space to understand your dreams, your needs, and the life you envision living there.',
-      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=800&fit=crop',
+      image: one.src,
       secondaryImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=800&fit=crop'
     },
     {
       id: '02',
       title: '3D Visualisation',
       description: 'This is where your vision takes shape. We create detailed 3D renders, allowing you to walk through your future home and make sure every detail is a part of your story.',
-      image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&h=800&fit=crop',
+      image: two.src,
       secondaryImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=800&fit=crop'
     },
     {
       id: '03',
       title: 'Detailed Drawings & Approval',
       description: 'We turn your dream into a solid plan. Once you love every detail, we finalize the drawings and sign the contract, officially beginning the creation of your story.',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&h=800&fit=crop',
+      image: three.src,
       secondaryImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=800&fit=crop'
     },
     {
       id: '04',
       title: 'Production & Quality Check',
       description: 'Behind the scenes, our skilled artisans begin to craft the elements of your home. Each piece is meticulously made in-house and passes a rigorous quality check, ensuring every detail is perfect for your story.',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop',
+      image: four.src,
       secondaryImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=800&fit=crop'
     },
     {
       id: '05',
       title: 'Installation & Unboxing',
       description: "The moment your story becomes a reality. Our professional team installs every piece with precision, transforming your space into the home you've always imagined.",
-      image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1200&h=800&fit=crop',
+      image: five.src,
       secondaryImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=800&fit=crop'
     },
     {
       id: '06',
       title: 'Handover & Walk-through',
       description: 'This is your moment. We do a final walk-through with you to ensure every detail is just right before handing over the keys to your new home and all the warranty details.',
-      image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=800&fit=crop',
+      image: six.src,
       secondaryImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=800&fit=crop'
     },
     {
       id: '07',
       title: 'Post-Handover Support',
       description: 'Breathe new life into existing spaces with our comprehensive renovation services. We specialize in updating and modernizing homes and commercial spaces while preserving their unique character and maximizing their potential.',
-      image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200&h=800&fit=crop',
+      image: seven.src,
       secondaryImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=800&fit=crop'
     }
   ];

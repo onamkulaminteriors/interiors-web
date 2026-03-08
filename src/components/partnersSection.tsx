@@ -10,6 +10,7 @@ import greenLam from '../assets/partners/greenlam.png'
 import virgo from '../assets/partners/virgo.png'
 import stylam from '../assets/partners/stylam.png'
 import blum from '../assets/partners/blum.png'
+import winnext from '../assets/partners/winnext.png'
 
 
 
@@ -129,6 +130,7 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     { name: 'Virgo', image: virgo.src, subtitle: 'BANG & OLUFSEN' },
     { name: 'Stylam', image: stylam.src },
     { name: 'Blum', image: blum.src },
+    { name: 'Winnext', image: winnext.src },
     // { name: 'GAGGENAU', image: null },
     // { name: 'SUB•ZERO', image: null },
     // { name: 'smeg', image: null },
@@ -353,7 +355,8 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
                 animation: `marquee 20s linear infinite`
               }}
             >
-              {[...partners, ...partners].map((p, i) => (
+              {/* We duplicate the array 3 times to guarantee enough content to loop seamlessly on very wide screens regardless of how many partners are added */}
+              {[...partners, ...partners, ...partners].map((p, i) => (
                 <div
                   key={`${p.name}-${i}`}
                   className="min-w-[130px] sm:min-w-[180px] md:min-w-[220px] lg:min-w-[260px] h-20 sm:h-24 md:h-28 lg:h-36 border rounded-lg flex flex-col items-center justify-center flex-shrink-0 px-3 sm:px-6 transition-colors duration-200 bg-transparent"
@@ -363,6 +366,10 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
                     <img
                       src={p.image}
                       alt={p.name}
+                      loading="lazy"
+                      decoding="async"
+                      width={200}
+                      height={100}
                       className="max-w-[70%] max-h-[60%] w-auto h-auto object-contain"
                       style={{ mixBlendMode: 'multiply' }}
                     />
