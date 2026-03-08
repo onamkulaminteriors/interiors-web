@@ -117,7 +117,7 @@ const TeamSection = () => {
               </div>
 
               <div className="text-left">
-                <h2 className="text-base sm:text-lg lg:text-sm xl:text-xl font-bold leading-tight text-gray-900 max-w-md mb-3 xl:mb-6">
+                <h2 className="text-base sm:text-lg lg:text-sm xl:text-xl leading-tight text-gray-900 max-w-md mb-3 xl:mb-6">
                   We are a passionate team of designers dedicated to transforming your vision into beautifully crafted spaces.
                 </h2>
 

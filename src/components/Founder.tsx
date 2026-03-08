@@ -1,5 +1,11 @@
 import founderImg from "../assets/images/founder.png";
 import signatureImg from "../assets/images/signature.png";
+import { Poppins } from 'next/font/google';
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
+});
 
 interface FounderData {
   id: number;
@@ -14,7 +20,7 @@ const Founder = () => {
     id: 1,
     name: "Mr. Noby Onamkulam",
     quote:
-      "A home is the most honest story a person can tell. My work is simply to listen deeply and design a space where that story—your story—can unfold beautifully, year after year",
+      "A home is the most honest story a person can tell. My work is simply to listen deeply and design a space where that story, your story - can unfold beautifully, year after year.",
     signature: signatureImg.src,
     image: founderImg.src,
   };
@@ -24,95 +30,74 @@ const Founder = () => {
       <div className="absolute inset-0 bg-white" />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        {/* Mobile Layout */}
-        <div className="lg:hidden flex flex-col items-center text-center space-y-6">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16 xl:gap-24">
+
           {/* Photo */}
-          <div className="w-40 h-52 sm:w-48 sm:h-64 rounded-xl overflow-hidden">
-            <img
-              src={founderData.image}
-              alt={founderData.name}
-              className="w-full h-full  object-center"
-            />
-          </div>
-
-          {/* Heading */}
-          <h2 className="text-xl sm:text-2xl font-light leading-tight mb-2">
-            <span className="block text-black text-sm sm:text-base font-normal mb-2">
-              Meet the Visionary Behind Crafting Your Story
-            </span>
-            <span className="bg-gradient-to-r from-amber-900 to-amber-700 bg-clip-text text-transparent font-bold text-2xl sm:text-3xl">
-              {founderData.name}
-            </span>
-          </h2>
-
-          {/* Quote */}
-          <div className="relative max-w-xl mx-auto px-4">
-            <div className="absolute -left-2 -top-2 text-3xl sm:text-4xl text-amber-200 font-serif">
-              &ldquo;
-            </div>
-            <blockquote className="text-base sm:text-lg text-amber-800 leading-snug italic">
-              {founderData.quote}
-            </blockquote>
-            <div className="absolute -right-2 -bottom-3 text-3xl sm:text-4xl text-amber-200 font-serif">
-              &rdquo;
-            </div>
-          </div>
-
-          {/* Signature */}
-          <div className="pt-4 border-t border-amber-200 w-full max-w-xs mx-auto">
-            <img
-              src={founderData.signature}
-              alt="Signature"
-              className="mx-auto w-32 sm:w-40 object-contain"
-            />
-          </div>
-        </div>
-
-        {/* Desktop Layout */}
-        <div className="hidden lg:grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left - Photo */}
-          <div className="flex justify-center">
-            <div className="w-80 h-96 lg:w-96 lg:h-[32rem] rounded-2xl overflow-hidden ">
+          <div className="flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-[400px] xl:w-[480px] relative mt-10 lg:mt-0">
+            <div className="rounded-[2rem] overflow-hidden bg-white">
               <img
                 src={founderData.image}
                 alt={founderData.name}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-cover object-bottom"
               />
             </div>
           </div>
 
-          {/* Right - Content */}
-          <div className="flex flex-col justify-center text-left space-y-8">
-            <h2 className="text-4xl lg:text-4xl xl:text-5xl font-light leading-tight mb-16">
-              <span className="block text-black text-2xl lg:text-2xl xl:text-3xl font-normal mb-10">
-                Meet the Visionary Behind Crafting Your Story
+          {/* Content */}
+          <div className={`flex flex-col text-left space-y-4 w-full ${poppins.className} pt-4 lg:pt-8`}>
+
+            {/* Heading */}
+            <div className="mb-4">
+              <span className="block text-gray-900 text-[1.4rem] sm:text-2xl lg:text-3xl font-medium tracking-normal leading-snug lg:max-w-none mb-2">
+                Meet The Visionary Behind Crafting Your Story
               </span>
-              <span className="bg-gradient-to-r from-amber-900 to-amber-700 bg-clip-text text-transparent font-bold">
+              <h2 className="text-[#8B6F47] font-bold text-[2.5rem] sm:text-5xl lg:text-[3.5rem] tracking-tight mt-4">
                 {founderData.name}
-              </span>
-            </h2>
+              </h2>
+            </div>
 
             {/* Quote */}
-            <div className="relative max-w-xl mt-16">
-              <div className="absolute -left-4 -top-2 text-6xl text-amber-200 font-serif">
+            <div className="relative pt-6 pb-6 pr-8 max-w-2xl mt-8 mb-4 ml-6 sm:ml-8">
+
+              {/* TOP LEFT BORDER CLUSTER */}
+              {/* Vertical left line */}
+              <div className="absolute top-0 -left-6 w-0 h-24 border-l-[1.5px] border-[#8B6F47] rounded-tl-xl" />
+              {/* Horizontal top line (short segment before quote) */}
+              <div className="absolute top-0 -left-6 w-4 border-t-[1.5px] border-[#8B6F47] rounded-tl-xl" />
+              {/* Top Quote Mark (acting as the gap) */}
+              <div className="absolute -top-[2.2rem] -left-1 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &ldquo;
               </div>
-              <blockquote className="text-xl lg:text-xl xl:text-2xl text-amber-800 leading-relaxed italic pl-10">
+              {/* Horizontal top line (long segment after quote) */}
+              <div className="absolute top-0 left-12 w-48 sm:w-64 border-t-[1.5px] border-[#8B6F47]" />
+
+              {/* Quote Text */}
+              <blockquote className="text-base sm:text-lg md:text-[1.1rem] text-gray-900 font-medium leading-relaxed italic relative z-10 w-full pr-4">
                 {founderData.quote}
               </blockquote>
-              <div className="absolute -right-4 -bottom-6 text-6xl text-amber-200 font-serif">
+
+              {/* BOTTOM RIGHT BORDER CLUSTER */}
+              {/* Horizontal bottom line (long segment before quote) */}
+              <div className="absolute bottom-0 left-12 right-14 border-b-[1.5px] border-[#8B6F47]" />
+              {/* Bottom Quote Mark (acting as the gap) */}
+              <div className="absolute -bottom-10 right-2 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &rdquo;
               </div>
+              {/* Horizontal bottom line (short segment after quote) */}
+              <div className="absolute bottom-0 -right-4 w-6 border-b-[1.5px] border-[#8B6F47] rounded-br-xl" />
+              {/* Vertical right line */}
+              <div className="absolute bottom-0 -right-4 w-0 h-24 border-r-[1.5px] border-[#8B6F47] rounded-br-xl" />
             </div>
 
             {/* Signature */}
-            <div className="pt-6 border-t border-amber-200 w-full max-w-sm">
+            <div className="mt-2 ml-4">
               <img
                 src={founderData.signature}
                 alt="Signature"
-                className="w-40 lg:w-48 object-contain"
+                className="w-32 sm:w-40 md:w-48 object-contain"
               />
             </div>
+
           </div>
         </div>
       </div>
