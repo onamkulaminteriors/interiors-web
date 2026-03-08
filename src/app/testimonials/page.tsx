@@ -251,7 +251,7 @@ export default function TestimonialsPage() {
 
                     <Link
                         href="/"
-                        className="text-sm font-medium text-gray-900 bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition-colors hidden sm:block"
+                        className="text-sm font-medium text-white bg-black px-4 py-2 rounded-full hover:bg-gray-800 transition-colors hidden sm:block"
                     >
                         Begin Your Story
                     </Link>
@@ -271,7 +271,7 @@ export default function TestimonialsPage() {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                         What Our Clients
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-500">
+                        <span className="text-[#996239]">
                             Say About Us
                         </span>
                     </h1>
@@ -327,7 +327,7 @@ export default function TestimonialsPage() {
                         }}
                     />
                     <div className="relative z-10 max-w-3xl mx-auto text-center">
-                        <QuoteIcon className="w-12 h-12 text-yellow-400 mx-auto mb-6 opacity-80" />
+                        <QuoteIcon className="w-12 h-12 text-[#996239] mx-auto mb-6 opacity-80" />
                         <p className="text-white text-xl sm:text-2xl lg:text-3xl font-light leading-relaxed italic mb-8">
                             &ldquo;We don&apos;t just design spaces — we craft experiences
                             that speak to the soul of every family and business we work
