@@ -16,27 +16,27 @@ const Team = () => {
   const teamMembers: TeamMember[] = [
     {
       id: 1,
-      name: "Emily Chen",
-      position: "Creative Director",
-      quote: "Innovation meets tradition in every design we create. We don't just follow trends, we set them.",
-      description: "Emily leads our creative vision, bringing fresh perspectives to modern interior design with 10+ years of experience.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop&crop=face&fm=png"
+      name: "Sarah Jenkins",
+      position: "Principal Interior Designer",
+      quote: "Creating spaces that tell a story. We blend modern elegance with timeless comfort in every home.",
+      description: "Sarah brings over a decade of luxury residential design experience to create tailored, breathtaking interiors.",
+      image: "/team/member-1.png"
     },
     {
       id: 2,
-      name: "David Park",
-      position: "3D Visualization Specialist",
-      quote: "Bringing dreams to life through technology. Every render tells a story before it becomes reality.",
-      description: "David creates stunning 3D visualizations that help clients envision their perfect spaces before construction begins.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop&crop=face&fm=png"
+      name: "Marcus Wei",
+      position: "Lead Interior Architect",
+      quote: "Form follows function, but aesthetic never has to be compromised. Every blueprint is a work of art.",
+      description: "Marcus specializes in spatial planning and architectural detailing, ensuring structural brilliance in our designs.",
+      image: "/team/member-2.png"
     },
     {
       id: 3,
-      name: "Alex Rodriguez",
-      position: "Project Manager",
-      quote: "Excellence is in the details. I ensure every project runs smoothly from concept to completion.",
-      description: "Alex coordinates all our projects with precision, ensuring timelines are met and quality standards exceeded.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&h=800&fit=crop&crop=face&fm=png"
+      name: "Elena Rostova",
+      position: "Project & Sourcing Manager",
+      quote: "Perfection is delivered through meticulous planning and sourcing the finest materials from around the globe.",
+      description: "Elena coordinates our complex renovations and curates bespoke furniture pieces for our exclusive clientele.",
+      image: "/team/member-3.png"
     },
   ];
 
@@ -141,8 +141,8 @@ const Team = () => {
                     key={index}
                     onClick={() => setCurrentIndex(index)}
                     className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${index === currentIndex
-                        ? 'bg-gray-900 w-4'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-gray-900 w-4'
+                      : 'bg-gray-300 hover:bg-gray-400'
                       }`}
                     aria-label={`Go to team member ${index + 1}`}
                   />
@@ -224,8 +224,8 @@ const Team = () => {
                     key={index}
                     onClick={() => setCurrentIndex(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex
-                        ? 'bg-gray-900 w-5'
-                        : 'bg-gray-300 hover:bg-gray-400'
+                      ? 'bg-gray-900 w-5'
+                      : 'bg-gray-300 hover:bg-gray-400'
                       }`}
                     aria-label={`Go to team member ${index + 1}`}
                   />
