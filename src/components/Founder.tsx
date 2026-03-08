@@ -57,40 +57,40 @@ const Founder = () => {
             </div>
 
             {/* Quote */}
-            <div className="relative pt-6 pb-6 pr-8 max-w-2xl mt-8 mb-4 ml-6 sm:ml-8">
+            <div className="relative pt-6 pb-6 pr-8 max-w-2xl mt-8 mb-4 ml-10 sm:ml-16 lg:ml-16 xl:ml-20 border-l-[1.5px] border-transparent">
 
               {/* TOP LEFT BORDER CLUSTER */}
               {/* Vertical left line */}
-              <div className="absolute top-0 -left-6 w-0 h-24 border-l-[1.5px] border-[#8B6F47] rounded-tl-xl" />
+              <div className="absolute top-0 left-0 w-0 h-24 border-l-[1.5px] border-[#8B6F47] rounded-tl-xl" />
               {/* Horizontal top line (short segment before quote) */}
-              <div className="absolute top-0 -left-6 w-4 border-t-[1.5px] border-[#8B6F47] rounded-tl-xl" />
+              <div className="absolute top-0 left-0 w-4 border-t-[1.5px] border-[#8B6F47] rounded-tl-xl" />
               {/* Top Quote Mark (acting as the gap) */}
-              <div className="absolute -top-[2.2rem] -left-1 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
+              <div className="absolute -top-[2.2rem] left-5 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &ldquo;
               </div>
               {/* Horizontal top line (long segment after quote) */}
-              <div className="absolute top-0 left-12 w-48 sm:w-64 border-t-[1.5px] border-[#8B6F47]" />
+              <div className="absolute top-0 left-16 w-48 sm:w-80 border-t-[1.5px] border-[#8B6F47]" />
 
               {/* Quote Text */}
-              <blockquote className="text-base sm:text-lg md:text-[1.1rem] text-gray-900 font-medium leading-relaxed italic relative z-10 w-full pr-4">
+              <blockquote className="text-[15px] sm:text-lg md:text-[1.1rem] text-gray-900 font-medium leading-[1.8] italic relative z-10 w-full pl-6 pr-4">
                 {founderData.quote}
               </blockquote>
 
               {/* BOTTOM RIGHT BORDER CLUSTER */}
               {/* Horizontal bottom line (long segment before quote) */}
-              <div className="absolute bottom-0 left-12 right-14 border-b-[1.5px] border-[#8B6F47]" />
+              <div className="absolute bottom-0 left-12 right-20 sm:right-24 border-b-[1.5px] border-[#8B6F47]" />
               {/* Bottom Quote Mark (acting as the gap) */}
-              <div className="absolute -bottom-10 right-2 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
+              <div className="absolute -bottom-10 right-8 sm:right-12 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &rdquo;
               </div>
               {/* Horizontal bottom line (short segment after quote) */}
-              <div className="absolute bottom-0 -right-4 w-6 border-b-[1.5px] border-[#8B6F47] rounded-br-xl" />
+              <div className="absolute bottom-0 right-2 sm:right-6 w-6 border-b-[1.5px] border-[#8B6F47] rounded-br-xl" />
               {/* Vertical right line */}
-              <div className="absolute bottom-0 -right-4 w-0 h-24 border-r-[1.5px] border-[#8B6F47] rounded-br-xl" />
+              <div className="absolute bottom-0 right-2 sm:right-6 w-0 h-24 border-r-[1.5px] border-[#8B6F47] rounded-br-xl" />
             </div>
 
             {/* Signature */}
-            <div className="mt-2 ml-4">
+            <div className="mt-2 ml-8 sm:ml-14 lg:ml-14 xl:ml-[4.5rem]">
               <img
                 src={founderData.signature}
                 alt="Signature"
