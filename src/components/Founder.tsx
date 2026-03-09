@@ -60,19 +60,17 @@ const Founder = () => {
             <div className="relative pt-6 pb-6 pr-8 max-w-2xl mt-8 mb-4 ml-10 sm:ml-16 lg:ml-16 xl:ml-20 border-l-[1.5px] border-transparent">
 
               {/* TOP LEFT BORDER CLUSTER */}
-              {/* Vertical left line */}
-              <div className="absolute top-0 left-0 w-0 h-24 border-l-[1.5px] border-[#8B6F47] rounded-tl-xl" />
-              {/* Horizontal top line (short segment before quote) */}
-              <div className="absolute top-0 left-0 w-4 border-t-[1.5px] border-[#8B6F47] rounded-tl-xl" />
+              {/* Top-left rounded corner */}
+              <div className="absolute top-0 left-0 w-8 h-24 border-l-[1.5px] border-t-[1.5px] border-[#8B6F47] rounded-tl-[1.8rem]" />
               {/* Top Quote Mark (acting as the gap) */}
-              <div className="absolute -top-[2.2rem] left-5 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
+              <div className="absolute -top-[2.2rem] left-8 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &ldquo;
               </div>
               {/* Horizontal top line (long segment after quote) */}
-              <div className="absolute top-0 left-16 w-48 sm:w-80 border-t-[1.5px] border-[#8B6F47]" />
+              <div className="absolute top-0 left-20 w-48 sm:w-80 border-t-[1.5px] border-[#8B6F47]" />
 
               {/* Quote Text */}
-              <blockquote className="text-[15px] sm:text-lg md:text-[1.1rem] text-gray-900 font-medium leading-[1.8] italic relative z-10 w-full pl-6 pr-4">
+              <blockquote className="text-[15px] sm:text-lg md:text-[1.1rem] text-gray-900 font-medium leading-[1.8] italic relative z-10 w-full pl-8 pr-4">
                 {founderData.quote}
               </blockquote>
 
@@ -83,10 +81,8 @@ const Founder = () => {
               <div className="absolute -bottom-10 right-8 sm:right-12 text-[#8B6F47] text-[5rem] font-serif leading-none font-extrabold tracking-tighter">
                 &rdquo;
               </div>
-              {/* Horizontal bottom line (short segment after quote) */}
-              <div className="absolute bottom-0 right-2 sm:right-6 w-6 border-b-[1.5px] border-[#8B6F47] rounded-br-xl" />
-              {/* Vertical right line */}
-              <div className="absolute bottom-0 right-2 sm:right-6 w-0 h-24 border-r-[1.5px] border-[#8B6F47] rounded-br-xl" />
+              {/* Bottom-right rounded corner */}
+              <div className="absolute bottom-0 right-2 sm:right-6 w-8 h-24 border-r-[1.5px] border-b-[1.5px] border-[#8B6F47] rounded-br-[1.8rem]" />
             </div>
 
             {/* Signature */}
