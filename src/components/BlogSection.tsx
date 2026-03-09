@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import imgKerala from '../assets/blogs/kerala_modern.png';
 import imgSmallHome from '../assets/blogs/small_home.png';
 import imgKitchen from '../assets/blogs/modular_kitchen.png';
@@ -131,10 +132,14 @@ const BlogSection = () => {
                             >
                                 {/* Image Container */}
                                 <div className="relative overflow-hidden mb-4 sm:mb-5 aspect-[4/3] bg-gray-100">
-                                    <img
+                                    <Image
                                         src={post.image}
                                         alt={post.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                        quality={80}
+                                        loading={index === 0 ? 'eager' : 'lazy'}
                                     />
                                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
 

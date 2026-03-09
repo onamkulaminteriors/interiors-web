@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Define the team member data type
@@ -87,11 +88,16 @@ const Team = () => {
           <div className="flex flex-col items-center justify-between px-4">
             {/* Team member photo */}
             <div className="flex justify-center mb-4">
-              <img
-                src={currentMember.image}
-                alt={currentMember.name}
-                className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover shadow-md"
-              />
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-md flex-shrink-0">
+                <Image
+                  src={currentMember.image}
+                  alt={currentMember.name}
+                  fill
+                  sizes="(max-width: 640px) 128px, 160px"
+                  className="object-cover"
+                  quality={80}
+                />
+              </div>
             </div>
 
             {/* Quote with curly quotes */}
@@ -157,11 +163,16 @@ const Team = () => {
 
           {/* LEFT side - Photo */}
           <div className="flex justify-center lg:justify-start">
-            <img
-              src={currentMember.image}
-              alt={currentMember.name}
-              className="w-40 h-40 rounded-full object-cover shadow-md"
-            />
+            <div className="relative w-40 h-40 rounded-full overflow-hidden shadow-md flex-shrink-0">
+              <Image
+                src={currentMember.image}
+                alt={currentMember.name}
+                fill
+                sizes="160px"
+                className="object-cover"
+                quality={80}
+              />
+            </div>
           </div>
 
           {/* RIGHT side - Content (80% width) */}

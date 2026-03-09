@@ -1,4 +1,5 @@
 import React, { useEffect, useState, memo } from 'react';
+import Image from 'next/image';
 import { motion, useTransform, MotionValue } from 'framer-motion';
 import { Poppins } from 'next/font/google';
 
@@ -152,8 +153,8 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
     { name: 'Stylam', image: stylam.src },
     { name: 'Blum', image: blum.src },
     { name: 'Virgo', image: virgo.src },
-    { name: 'Hettich', image: hettich.src ,subtitle: 'BANG & OLUFSEN'},
-    
+    { name: 'Hettich', image: hettich.src, subtitle: 'BANG & OLUFSEN' },
+
 
     // { name: 'Mikasa', image: mikasaPly.src },
     // { name: 'greenPly', image: greenPly.src },
@@ -403,13 +404,13 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
                   style={{ borderColor: 'inherit' }}
                 >
                   {p.image ? (
-                    <img
+                    <Image
                       src={p.image}
                       alt={p.name}
-                      loading="lazy"
-                      decoding="async"
                       width={200}
                       height={100}
+                      loading="lazy"
+                      quality={75}
                       className="max-w-[70%] max-h-[60%] w-auto h-auto object-contain"
                       style={{ mixBlendMode: 'multiply' }}
                     />

@@ -1,4 +1,5 @@
 import { useState, useEffect, memo } from 'react';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import logoSvg from '../assets/images/LOGO 03.png';
 
@@ -50,12 +51,14 @@ const ProjectCard = memo(({ project, heightClass, extraContent, delay, isVisible
         }`}
       style={{ willChange: 'transform, opacity' }}
     >
-      <img
+      <Image
         src={project.image}
         alt={project.name}
+        fill
+        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
         loading="lazy"
-        decoding="async"
-        className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+        quality={80}
+        className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
       />
 
       <div className={`absolute inset-0 transition-opacity duration-300 ${project.quote ? 'bg-gradient-to-r from-black/70 via-black/30 to-transparent' : 'bg-gradient-to-t from-black/60 via-transparent to-transparent'
@@ -109,10 +112,12 @@ const TeamSection = () => {
           <div className={`lg:col-span-4 flex flex-col justify-center transition-all duration-1000 ease-out delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="space-y-4 mb-6 lg:mb-0">
               <div className="flex items-center justify-start">
-                <img
-                  src={logoSvg.src}
+                <Image
+                  src={logoSvg}
                   alt="Logo"
-                  className="h-8 sm:h-10 lg:h-7 lg:w-7 xl:h-10 xl:w-10 object-contain"
+                  height={40}
+                  className="h-8 sm:h-10 lg:h-7 xl:h-10 object-contain"
+                  quality={90}
                 />
               </div>
 

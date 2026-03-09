@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 import one from '../assets/process/1.jpg';
 import two from '../assets/process/2.jpg';
@@ -138,13 +139,15 @@ const ServicesShowcase = () => {
               >
                 {services.map((service, index) => (
                   <div key={service.id} className="h-full w-full flex-shrink-0 relative">
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.title}
-                      loading={index === 0 ? "eager" : "lazy"}
-                      decoding="async"
-                      className="w-full h-full object-cover"
-                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+                      fill
+                      sizes="60vw"
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      quality={80}
+                      className="object-cover"
+                      style={{ backfaceVisibility: 'hidden' }}
                     />
                     <div className="absolute inset-0 bg-black/5"></div>
                   </div>
@@ -192,13 +195,15 @@ const ServicesShowcase = () => {
           {/* Image Display for Mobile */}
           <div className="relative h-48 sm:h-64 md:h-80 bg-gray-100 p-4">
             <div className="relative h-full w-full">
-              <img
+              <Image
                 src={services[hoveredIndex].image}
                 alt={services[hoveredIndex].title}
-                loading={hoveredIndex === 0 ? "eager" : "lazy"}
-                decoding="async"
-                className="w-full h-full object-cover transition-all duration-700 ease-out"
-                style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+                fill
+                sizes="100vw"
+                loading="lazy"
+                quality={80}
+                className="object-cover transition-all duration-700 ease-out"
+                style={{ backfaceVisibility: 'hidden' }}
               />
               <div className="absolute inset-0 bg-black/5"></div>
             </div>

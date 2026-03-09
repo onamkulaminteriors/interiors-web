@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import founderImg from "../assets/images/founder.png";
 import signatureImg from "../assets/images/signature.png";
 import { Poppins } from 'next/font/google';
@@ -35,10 +36,13 @@ const Founder = () => {
           {/* Photo */}
           <div className="flex-shrink-0 w-72 sm:w-80 md:w-96 lg:w-[400px] xl:w-[480px] relative mt-10 lg:mt-0">
             <div className="rounded-[2rem] overflow-hidden bg-white">
-              <img
-                src={founderData.image}
+              <Image
+                src={founderImg}
                 alt={founderData.name}
                 className="w-full h-auto object-cover object-bottom"
+                sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, (max-width: 1024px) 384px, (max-width: 1280px) 400px, 480px"
+                priority
+                quality={85}
               />
             </div>
           </div>
@@ -87,10 +91,12 @@ const Founder = () => {
 
             {/* Signature */}
             <div className="mt-2 ml-8 sm:ml-14 lg:ml-14 xl:ml-[4.5rem]">
-              <img
-                src={founderData.signature}
+              <Image
+                src={signatureImg}
                 alt="Signature"
+                height={48}
                 className="w-32 sm:w-40 md:w-48 object-contain"
+                quality={75}
               />
             </div>
 
