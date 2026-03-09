@@ -2,10 +2,14 @@ import { useRef, memo, useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { motion, useTransform, MotionValue } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface TestimonialScrollProps {
   scrollProgress: MotionValue<number>;
 }
+
+import sony from '../assets/testimonials/sony_sebastial.jpeg'
+import joseph from '../assets/testimonials/joseph.jpeg'
 
 // --- STATIC DATA ---
 const testimonials = [
@@ -16,8 +20,8 @@ const testimonials = [
     role: "Homeowner",
     project: "Pulincunnoo Residence",
     location: "Pulincunnoo, Kerala",
-    projectImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
-    authorImage: null,
+    projectImage: "/images/testimonials/proj_pulincunnoo_1773070337252.png",
+    authorImage: joseph.src,
     number: "01",
   },
   {
@@ -27,8 +31,8 @@ const testimonials = [
     role: "Long-term Client",
     project: "Heritage Interiors",
     location: "Kerala, India",
-    projectImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
-    authorImage: null,
+    projectImage: "/images/testimonials/proj_heritage_1773070358082.png",
+    authorImage: sony.src,
     number: "02",
   },
   {
@@ -38,8 +42,8 @@ const testimonials = [
     role: "Business Owner",
     project: "Dubai Project",
     location: "Dubai, UAE",
-    projectImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&h=1080&fit=crop",
-    authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
+    projectImage: "/images/testimonials/proj_dubai_1773070376282.png",
+    authorImage: "/images/testimonials/auth_alexander_1773070463526.png",
     number: "03",
   },
 ];
@@ -99,13 +103,22 @@ const TestimonialCard = ({
       {/* Image Section */}
       <div className="w-full h-1/2 lg:w-2/3 lg:h-full relative overflow-hidden">
         <motion.div
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
+          className="absolute inset-0 will-change-transform"
           style={{
-            backgroundImage: `url(${testimonial.projectImage})`,
             scale: scale,
             translateZ: 0,
           }}
-        />
+        >
+          <Image
+            src={testimonial.projectImage}
+            alt={testimonial.project}
+            fill
+            sizes="(max-width: 1024px) 100vw, 66vw"
+            className="object-cover"
+            priority={index === 0}
+            quality={90}
+          />
+        </motion.div>
 
         {/* Mobile/Tablet Overlay Content */}
         <div
@@ -140,12 +153,14 @@ const TestimonialCard = ({
         </p>
 
         <div className="flex items-center gap-4 mt-2">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 border border-black/10 flex items-center justify-center">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 border border-black/10 flex items-center justify-center relative">
             {testimonial.authorImage ? (
-              <img
+              <Image
                 src={testimonial.authorImage}
                 alt={testimonial.author}
-                className="w-full h-full object-cover"
+                fill
+                sizes="48px"
+                className="object-cover"
               />
             ) : (
               <span className="text-gray-500 font-semibold text-sm sm:text-base">

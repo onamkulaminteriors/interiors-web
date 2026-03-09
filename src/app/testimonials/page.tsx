@@ -2,89 +2,95 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Quote as QuoteIcon, Star } from "lucide-react";
 import logo from "../../assets/images/LOGO 01.png";
 import Footer from "../../components/Footer";
 
+import sony from '../../assets/testimonials/sony_sebastial.jpeg'
+import joseph from '../../assets/testimonials/joseph.jpeg'
+import thomas from '../../assets/testimonials/thomas.jpeg'
+import bijupal from '../../assets/testimonials/bijubal.jpeg'
+import seb2 from '../../assets/testimonials/seb2.jpeg'
+import antony from '../../assets/testimonials/antony.jpeg'
 // ---- FULL TESTIMONIALS DATA ----
 // NOTE: All client quotes are kept EXACTLY as provided. Zero changes to wording.
 const allTestimonials = [
     {
         id: 1,
-        quote:
-            "I met Mr. Jose P Abraham (Noby) MD, Onamkulam interiors way back in 1999, ever since then all my interior works are being done by Onamkulam interiors. He is having a perfect team and well equipped modern work shop. He always uses top brands and best quality fixtures at very reasonable price. He complete his works well in time and his after sales service is extremely good. Strongly recommend.",
+        quote: "I met Mr. Jose P Abraham (Noby)MD,Onamkulam interiors way back in 1999, ever since then all my interior works are being done by Onamkulam interiors. He is having a perfect team and well equipped modern work shop. He always uses top brands and best quality fixtures at very reasonable price. He complete his works well in time and his after sales service is extremely good. Strongly recommend.",
         author: "Joseph Mathew Illiparambil",
         role: "Homeowner",
         project: "Pulincunnoo Residence",
-        location: "Pulincunnoo, Kerala",
-        projectImage:
-            "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-        authorImage: null,
+        location: "Pulincunnoo",
+        projectImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
+        authorImage: joseph.src,
         rating: 5,
     },
     {
         id: 2,
-        quote:
-            "Onamkulam Interiors is an integral part of my house interiors - doors, windows, tables and chairs, kitchen shelves, book and crockery shelves, sofas and side tables, beds and wardrobes - since more than a quarter century, and all still fully functional. The young carpenters were full of ideas and energy. They had the willingness to listen and learn my likes and needs.",
+        quote: "OI is an integral part of my house interiors - doors, windows, tables and chairs, kitchen shelves, book and crockery shelves, sofas and side tables, beds and wardrobes - since more than a quarter century, and all still fully functional. The young carpenters were full of ideas and energy. They had the willingness to listen and learn my likes and needs. They worked with my limitations in mind. Thanks to the entire team.",
         author: "Sony Sebastian Vattamala",
         role: "Long-term Client",
         project: "Heritage Interiors",
         location: "Kerala, India",
-        projectImage:
-            "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
-        authorImage: null,
+        projectImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+        authorImage: sony.src,
         rating: 5,
     },
     {
         id: 3,
-        quote:
-            "The pricing was highly competitive and the workmanship speaks for itself. Onamkulam Interiors completed the work with great care and attention to detail, highly recommended for seeking quality interior works with professionalism and commitment.",
-        author: "Alexander Wright",
+        quote: "I am happy with the interior work done by Onamkulam Interiors. The entire work was carried out with sheer dedication and professionalism. I am impressed that the team adhered strictly to the promised completion date on time without compromising on quality. Onamkulam team of dedicated professionals and courteous work force handled the work efficiently and responsibly from the start to finish. The pricing was highly competitive and the workmanship speaks for itself. onamkulam Interiors completed the work with great care and attention to detail, highly recommended for seeking quality interior works with professionalism and commitment.",
+        author: "Alexander Wright", // Random name for confidential client
         role: "Business Owner",
         project: "Dubai Project",
         location: "Dubai, UAE",
-        projectImage:
-            "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+        projectImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
         authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
         id: 4,
-        quote:
-            "In 2006, when we built our home, my brother-in-law introduced us to Mr. Noby, Managing Director of Onamkulam Interiors. From our very first meeting, we shared our dream of creating a home that was warm, cozy, and modern and he brought that vision to life even better than we had imagined. Every element was perfectly executed.",
-        author: "Valued Client",
+        quote: "In 2006, when we built our home, my brother-in-law introduced us to Mr. Noby, Managing Director of Onamkulam Interiors. From our very first meeting, we shared our dream of creating a home that was warm, cozy, and modern and he brought that vision to life even better than we had imagined. Every element was thoughtfully designed, blending elegance with comfort. What impressed us most was his professionalism and commitment. Despite our tight deadline, the entire project was completed on time, without compromising on quality. The factory-finished work was flawless, stylish, and perfectly aligned with our budget. If you are looking for a designer who genuinely listens, understands your vision, and turns a house into a place you are proud to call home, Noby Onamkulam is the one to trust.",
+        author: "Thomas Kuncheria",
         role: "Homeowner",
-        project: "Modern Cozy Home",
-        location: "Kerala, India",
-        projectImage:
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
-        authorImage: null,
+        project: "Kanjickal Koonapuram",
+        location: "Pulincunnoo",
+        projectImage: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+        authorImage: thomas.src,
         rating: 5,
     },
     {
         id: 5,
-        quote:
-            "Exceptional craftsmanship and a keen eye for aesthetics. The team took our brief and elevated it into something extraordinary. I couldn't be happier with the results.",
-        author: "James Whitfield",
-        role: "Property Developer",
-        project: "The Whitfield Penthouse",
-        location: "Dubai, UAE",
-        projectImage:
-            "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+        quote: "Mr. Noby handled the entire woodwork for my home approximately 10 years ago. At the time, I was living abroad, which usually makes overseeing a construction project quite stressful. However, Mr. Noby proved to be exceptionally trustworthy and professional, managing the project with complete integrity in my absence. A decade later, I can confidently say that his craftsmanship is commendable. To this day, we have experienced zero issues with any of his work. The quality of the materials used and the precision of his execution have truly stood the test of time.",
+        author: "Antony Scaria",
+        role: "Homeowner",
+        project: "Palakunnel Nadackapadam",
+        location: "Changanacherry",
+        projectImage: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
+        authorImage: antony.src,
         rating: 5,
     },
     {
         id: 6,
-        quote:
-            "They transformed our restaurant into an inviting, elegant space that our customers constantly compliment. The design perfectly captures our brand identity and ambiance.",
-        author: "Aarav Menon",
-        role: "Restaurant Owner",
-        project: "The Spice Garden",
-        location: "Kochi, India",
-        projectImage:
-            "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
-        authorImage: null,
+        quote: "We recently had the pleasure of working with Onamkulam Interiors for the kitchen and cupboard work in our home, and we couldn’t be happier with the results. The owner, Noby Onamkulam, along with his dedicated team, did a truly wonderful job from start to finish. Noby was always available to answer our questions and responded promptly at every stage of the project. His professionalism, commitment, and attention to detail were evident throughout the entire process. The quality of workmanship and the materials used were of superior standard, and the finishing exceeded our expectations.",
+        author: "Sony Sebastian Vattamala",
+        role: "Homeowner",
+        project: "Kitchen & Cupboard Renovation",
+        location: "Kerala, India",
+        projectImage: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop",
+        authorImage: seb2.src,
+        rating: 5,
+    },
+    {
+        id: 7,
+        quote: "At the initial stage of planning for the construction of my house back in 2011, the most difficult thing to decide was about the interior decoration. I wanted something that would not only look beautiful but also feel comfortable and practical for everyday living. It was then I discussed the same with Mr. Noby of “Onamkulam Interiors”. The entire interior work has been executed with exceptional care, creativity, and professionalism. From understanding our ideas to suggesting thoughtful improvements, Mr. Noby and team handled every stage with patience and expertise. The attention to detail, quality of materials, and flawless finishing clearly reflects their dedication to excellence. After installation services provided by Onamkulam Interiors is outstanding. Without any hesitation I will recommend Mr. Noby & “Onamkulam Interiors“ to anybody.",
+        author: "Biju Abraham Kuzhivelil",
+        role: "Homeowner",
+        project: "Custom Home Interior",
+        location: "Kerala, India",
+        projectImage: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=600&fit=crop",
+        authorImage: bijupal.src,
         rating: 5,
     }
 ];
@@ -119,10 +125,12 @@ const TestimonialCard = ({
                     className={`absolute inset-0 bg-gray-200 transition-opacity duration-500 ${imageLoaded ? "opacity-0" : "opacity-100"
                         }`}
                 />
-                <img
+                <Image
                     src={testimonial.projectImage}
                     alt={testimonial.project}
-                    className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${imageLoaded ? "opacity-100" : "opacity-0"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className={`object-cover group-hover:scale-105 transition-transform duration-700 ${imageLoaded ? "opacity-100" : "opacity-0"
                         }`}
                     onLoad={() => setImageLoaded(true)}
                 />
@@ -150,12 +158,14 @@ const TestimonialCard = ({
 
                 <div className="pt-2 border-t border-gray-100 flex items-center gap-3">
                     {/* Avatar Component */}
-                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-100 border border-black/5 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 bg-gray-100 border border-black/5 flex items-center justify-center relative">
                         {testimonial.authorImage ? (
-                            <img
+                            <Image
                                 src={testimonial.authorImage}
                                 alt={testimonial.author}
-                                className="w-full h-full object-cover"
+                                fill
+                                sizes="40px"
+                                className="object-cover"
                             />
                         ) : (
                             <span className="text-gray-500 font-semibold text-xs tracking-wider">
