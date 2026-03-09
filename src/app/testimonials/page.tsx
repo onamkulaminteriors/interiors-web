@@ -7,28 +7,29 @@ import logo from "../../assets/images/LOGO 01.png";
 import Footer from "../../components/Footer";
 
 // ---- FULL TESTIMONIALS DATA ----
+// NOTE: All client quotes are kept EXACTLY as provided. Zero changes to wording.
 const allTestimonials = [
     {
         id: 1,
         quote:
-            "This interior design studio transformed our home into a masterpiece. The attention to detail and creativity exceeded all expectations. Every corner of our house now tells a story.",
-        author: "Sarah Johnson",
+            "I met Mr. Jose P Abraham (Noby) MD, Onamkulam interiors way back in 1999, ever since then all my interior works are being done by Onamkulam interiors. He is having a perfect team and well equipped modern work shop. He always uses top brands and best quality fixtures at very reasonable price. He complete his works well in time and his after sales service is extremely good. Strongly recommend.",
+        author: "Joseph Mathew Illiparambil",
         role: "Homeowner",
-        project: "Sanur House",
-        location: "San Francisco, CA",
+        project: "Pulincunnoo Residence",
+        location: "Pulincunnoo, Kerala",
         projectImage:
             "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+        authorImage: null,
         rating: 5,
     },
     {
         id: 2,
         quote:
-            "Working with Onamkulam Interiors was an incredible experience. They understood our vision perfectly and brought it to life beautifully. Our office space has never felt more inspiring.",
-        author: "Michael Chen",
-        role: "Business Owner",
-        project: "Modern Loft",
-        location: "New York, NY",
+            "Onamkulam Interiors is an integral part of my house interiors - doors, windows, tables and chairs, kitchen shelves, book and crockery shelves, sofas and side tables, beds and wardrobes - since more than a quarter century, and all still fully functional. The young carpenters were full of ideas and energy. They had the willingness to listen and learn my likes and needs.",
+        author: "Sony Sebastian Vattamala",
+        role: "Long-term Client",
+        project: "Heritage Interiors",
+        location: "Kerala, India",
         projectImage:
             "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
         authorImage: null,
@@ -37,27 +38,27 @@ const allTestimonials = [
     {
         id: 3,
         quote:
-            "The team's professionalism and innovative approach to design made our renovation process smooth and enjoyable. They turned a dated space into something truly remarkable.",
-        author: "Emily Rodriguez",
-        role: "Architect",
-        project: "Urban Retreat",
-        location: "Los Angeles, CA",
+            "The pricing was highly competitive and the workmanship speaks for itself. Onamkulam Interiors completed the work with great care and attention to detail, highly recommended for seeking quality interior works with professionalism and commitment.",
+        author: "Alexander Wright",
+        role: "Business Owner",
+        project: "Dubai Project",
+        location: "Dubai, UAE",
         projectImage:
             "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
         id: 4,
         quote:
-            "From the initial consultation to the final walkthrough, the entire experience was seamless. They truly listen and deliver beyond what you imagine. Our villa is now a magazine-worthy home.",
-        author: "Priya Nair",
+            "In 2006, when we built our home, my brother-in-law introduced us to Mr. Noby, Managing Director of Onamkulam Interiors. From our very first meeting, we shared our dream of creating a home that was warm, cozy, and modern and he brought that vision to life even better than we had imagined. Every element was perfectly executed.",
+        author: "Valued Client",
         role: "Homeowner",
-        project: "Coastal Villa",
+        project: "Modern Cozy Home",
         location: "Kerala, India",
         projectImage:
             "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop",
+        authorImage: null,
         rating: 5,
     },
     {
@@ -70,7 +71,7 @@ const allTestimonials = [
         location: "Dubai, UAE",
         projectImage:
             "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
+        authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
         rating: 5,
     },
     {
@@ -85,46 +86,7 @@ const allTestimonials = [
             "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop",
         authorImage: null,
         rating: 5,
-    },
-    {
-        id: 7,
-        quote:
-            "The bespoke furniture and custom joinery they designed for our living room is simply stunning. Every piece fits perfectly and the quality is outstanding. True artistry at work.",
-        author: "Anjali Sharma",
-        role: "Interior Enthusiast",
-        project: "Heritage Home",
-        location: "Bangalore, India",
-        projectImage:
-            "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&h=600&fit=crop",
-        authorImage: null,
-        rating: 5,
-    },
-    {
-        id: 8,
-        quote:
-            "Our new office radiates professionalism and creativity. Our team productivity has improved noticeably since the redesign. Onamkulam Interiors truly understands how spaces affect people.",
-        author: "David Park",
-        role: "Tech Startup CEO",
-        project: "Innovation Hub",
-        location: "Singapore",
-        projectImage:
-            "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
-        authorImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-        rating: 5,
-    },
-    {
-        id: 9,
-        quote:
-            "The master bedroom transformation was breathtaking. They created a serene sanctuary that feels like a luxury hotel suite every single day. Absolutely worth every penny.",
-        author: "Fatima Al-Rashid",
-        role: "Homeowner",
-        project: "Desert Oasis",
-        location: "Riyadh, Saudi Arabia",
-        projectImage:
-            "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&h=600&fit=crop",
-        authorImage: null,
-        rating: 5,
-    },
+    }
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (
@@ -271,9 +233,7 @@ export default function TestimonialsPage() {
                     <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
                         What Our Clients
                         <br />
-                        <span className="text-[#996239]">
-                            Say About Us
-                        </span>
+                        <span className="text-[#996239]">Say About Us</span>
                     </h1>
                     <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
                         Real stories from homeowners, business owners, and architects who

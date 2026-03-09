@@ -11,50 +11,61 @@ interface TestimonialScrollProps {
 const testimonials = [
   {
     id: 1,
-    quote: "This interior design studio transformed our home into a masterpiece. The attention to detail and creativity exceeded all expectations.",
-    author: "Sarah Johnson",
+    quote: "I met Mr. Jose P Abraham (Noby) MD, Onamkulam interiors way back in 1999, ever since then all my interior works are being done by Onamkulam interiors. He is having a perfect team and well equipped modern work shop. He always uses top brands and best quality fixtures at very reasonable price. He complete his works well in time and his after sales service is extremely good. Strongly recommend.",
+    author: "Joseph Mathew Illiparambil",
     role: "Homeowner",
-    project: "Sanur House",
-    location: "San Francisco, CA",
+    project: "Pulincunnoo Residence",
+    location: "Pulincunnoo, Kerala",
     projectImage: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1920&h=1080&fit=crop",
-    authorImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+    authorImage: null,
     number: "01",
   },
   {
     id: 2,
-    quote: "Working with HouseMood was an incredible experience. They understood our vision perfectly and brought it to life beautifully.",
-    author: "Michael Chen",
-    role: "Business Owner",
-    project: "Modern Loft",
-    location: "New York, NY",
+    quote: "Onamkulam Interiors is an integral part of my house interiors - doors, windows, tables and chairs, kitchen shelves, book and crockery shelves, sofas and side tables, beds and wardrobes - since more than a quarter century, and all still fully functional. The young carpenters were full of ideas and energy. They had the willingness to listen and learn my likes and needs.",
+    author: "Sony Sebastian Vattamala",
+    role: "Long-term Client",
+    project: "Heritage Interiors",
+    location: "Kerala, India",
     projectImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
-    authorImage: null, // Tests the initials fallback
+    authorImage: null,
     number: "02",
   },
   {
     id: 3,
-    quote: "The team's professionalism and innovative approach to design made our renovation process smooth and enjoyable.",
-    author: "Emily Rodriguez",
-    role: "Architect",
-    project: "Urban Retreat",
-    location: "Los Angeles, CA",
+    quote: "I am happy with the interior work done by Onamkulam Interiors. The entire work was carried out with sheer dedication and professionalism. I am impressed that the team adhered strictly to the promised completion date on time without compromising on quality. Onamkulam team of dedicated professionals and courteous work force handled the work efficiently and responsibly from the start to finish.",
+    author: "Alexander Wright",
+    role: "Business Owner",
+    project: "Dubai Project",
+    location: "Dubai, UAE",
     projectImage: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1920&h=1080&fit=crop",
-    authorImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop",
+    authorImage: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
     number: "03",
   },
 ];
 
 // Reusable styles to prevent object creation on every render
 const LAYER_STYLE: React.CSSProperties = {
-  willChange: 'transform',
-  backfaceVisibility: 'hidden',
-  WebkitBackfaceVisibility: 'hidden',
+  willChange: "transform",
+  backfaceVisibility: "hidden",
+  WebkitBackfaceVisibility: "hidden",
   perspective: 1000,
 };
 
-const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }: { testimonial: any, index: number, totalCards: number, progress: MotionValue<number>, isDesktop: boolean }) => {
-  // Transform logic
-  const translateY = useTransform(progress, p => {
+const TestimonialCard = ({
+  testimonial,
+  index,
+  totalCards,
+  progress,
+  isDesktop,
+}: {
+  testimonial: any;
+  index: number;
+  totalCards: number;
+  progress: MotionValue<number>;
+  isDesktop: boolean;
+}) => {
+  const translateY = useTransform(progress, (p) => {
     const sectionStart = index / totalCards;
     const sectionEnd = (index + 1) / totalCards;
     const rawSectionProgress = (p - sectionStart) / (sectionEnd - sectionStart);
@@ -62,7 +73,7 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
     return (1 - sectionProgress) * 100;
   });
 
-  const scale = useTransform(progress, p => {
+  const scale = useTransform(progress, (p) => {
     if (!isDesktop) return 1;
     const sectionStart = index / totalCards;
     const sectionEnd = (index + 1) / totalCards;
@@ -72,25 +83,16 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
   });
 
   const isSecondSection = index === 1;
-  const textColor = isSecondSection ? 'text-white' : 'text-black';
-  const bgColor = isSecondSection ? 'bg-black' : 'bg-white';
-  const mobileOverlayBg = isSecondSection
-    ? 'bg-gradient-to-t from-black/90 via-black/30 to-transparent'
-    : 'bg-gradient-to-t from-white/90 via-white/30 to-transparent';
-  const mobileTextColor = isSecondSection ? 'text-white' : 'text-black';
-
-  // Optimization: we can use style display none if mostly out of view, but framer motion handles simple transforms efficiently.
-  // To replicate the original "return null if hidden" optimization, we would need derived state.
-  // But CSS visibility: hidden via transform logic is cleaner.
-  // For now, we render all (3 cards is cheap).
+  const textColor = isSecondSection ? "text-white" : "text-black";
+  const bgColor = isSecondSection ? "bg-black" : "bg-white";
 
   return (
     <motion.div
       className="absolute inset-0 w-full h-full flex flex-col lg:flex-row"
       style={{
         ...LAYER_STYLE,
-        top: 0, // Ensure absolute positioning works
-        y: useTransform(translateY, v => `${v}%`), // Map number to string %
+        top: 0,
+        y: useTransform(translateY, (v) => `${v}%`),
         zIndex: index + 1,
       }}
     >
@@ -101,13 +103,20 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
           style={{
             backgroundImage: `url(${testimonial.projectImage})`,
             scale: scale,
-            translateZ: 0, // Forces GPU acceleration
+            translateZ: 0,
           }}
         />
 
         {/* Mobile/Tablet Overlay Content */}
-        <div className={`lg:hidden absolute bottom-0 left-0 right-0 pt-32 pb-6 px-6 md:px-10 flex flex-col justify-end bg-gradient-to-t ${isSecondSection ? 'from-black/90 to-transparent text-white' : 'from-white/95 to-transparent text-black'}`}>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">{testimonial.number}</h1>
+        <div
+          className={`lg:hidden absolute bottom-0 left-0 right-0 pt-32 pb-6 px-6 md:px-10 flex flex-col justify-end bg-gradient-to-t ${isSecondSection
+            ? "from-black/90 to-transparent text-white"
+            : "from-white/95 to-transparent text-black"
+            }`}
+        >
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-2">
+            {testimonial.number}
+          </h1>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2">
             {testimonial.project}
           </h2>
@@ -116,19 +125,21 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
       </div>
 
       {/* Content Section */}
-      <div className={`flex flex-col justify-center w-full h-1/2 lg:w-1/3 lg:h-full ${bgColor} ${textColor} p-6 sm:p-8 md:p-12 lg:p-12`}>
-
-        <h1 className="hidden lg:block text-5xl lg:text-7xl font-bold mb-4 lg:mb-6">{testimonial.number}</h1>
+      <div
+        className={`flex flex-col justify-center w-full h-1/2 lg:w-1/3 lg:h-full ${bgColor} ${textColor} p-6 sm:p-8 md:p-12 lg:p-12`}
+      >
+        <h1 className="hidden lg:block text-5xl lg:text-7xl font-bold mb-4 lg:mb-6">
+          {testimonial.number}
+        </h1>
         <h2 className="hidden lg:block text-2xl lg:text-4xl font-semibold mb-3 lg:mb-4">
           {testimonial.project}
         </h2>
 
         <p className="text-sm sm:text-base md:text-xl lg:text-lg italic mb-4 lg:mb-6 leading-relaxed">
-          "{testimonial.quote}"
+          &ldquo;{testimonial.quote}&rdquo;
         </p>
 
         <div className="flex items-center gap-4 mt-2">
-          {/* Avatar Component */}
           <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200 border border-black/10 flex items-center justify-center">
             {testimonial.authorImage ? (
               <img
@@ -149,33 +160,47 @@ const TestimonialCard = ({ testimonial, index, totalCards, progress, isDesktop }
           </div>
 
           <div className="space-y-0.5">
-            <p className="font-medium text-sm sm:text-base md:text-lg">{testimonial.author}</p>
-            <p className={`text-xs sm:text-sm md:text-base ${isSecondSection ? 'opacity-70' : 'opacity-60'}`}>{testimonial.role}</p>
-            <p className={`hidden lg:block text-xs sm:text-sm ${isSecondSection ? 'opacity-50' : 'opacity-40'}`}>{testimonial.location}</p>
+            <p className="font-medium text-sm sm:text-base md:text-lg">
+              {testimonial.author}
+            </p>
+            <p
+              className={`text-xs sm:text-sm md:text-base ${isSecondSection ? "opacity-70" : "opacity-60"
+                }`}
+            >
+              {testimonial.role}
+            </p>
+            <p
+              className={`hidden lg:block text-xs sm:text-sm ${isSecondSection ? "opacity-50" : "opacity-40"
+                }`}
+            >
+              {testimonial.location}
+            </p>
           </div>
         </div>
 
         <div className="mt-6 lg:mt-8 flex items-center justify-center lg:justify-start gap-2 cursor-pointer group">
-          {/* <span className={`text-sm lg:text-base font-medium ${isSecondSection ? 'text-white' : 'text-black'}`}>
-            Read More
-          </span> */}
-          {/* <ArrowRight className={`w-5 h-5 lg:w-6 lg:h-6 ${isSecondSection ? 'text-white' : 'text-black'} transition-transform duration-300 group-hover:scale-125 group-hover:translate-x-1`} /> */}
+          {/* Read More button commented out as per original */}
         </div>
       </div>
     </motion.div>
   );
 };
 
-const TestimonialIndicator = ({ index, totalCards, progress }: { index: number, totalCards: number, progress: MotionValue<number> }) => {
-  // Determine active color via transform?
-  // Background color interpolation
+const TestimonialIndicator = ({
+  index,
+  totalCards,
+  progress,
+}: {
+  index: number;
+  totalCards: number;
+  progress: MotionValue<number>;
+}) => {
   const sectionStart = index / totalCards;
   const sectionEnd = (index + 1) / totalCards;
 
-  // Check if active (p >= start && p < end)
-  const backgroundColor = useTransform(progress, p => {
-    return (p >= sectionStart && p < sectionEnd) ? '#1f2937' : '#9ca3af'; // gray-800 vs gray-400
-  });
+  const backgroundColor = useTransform(progress, (p) =>
+    p >= sectionStart && p < sectionEnd ? "#1f2937" : "#9ca3af"
+  );
 
   return (
     <motion.div
@@ -188,14 +213,13 @@ const TestimonialIndicator = ({ index, totalCards, progress }: { index: number, 
 const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const totalCards = testimonials.length;
-
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
     handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -227,7 +251,7 @@ const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
         ))}
       </div>
 
-      {/* View All button — centered at bottom */}
+      {/* View All button */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[60]">
         <Link
           href="/testimonials"
@@ -238,16 +262,13 @@ const TestimonialScroll = memo(({ scrollProgress }: TestimonialScrollProps) => {
         </Link>
       </div>
 
-      {/* Scroll hint text - appears briefly at the start */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center pointer-events-none z-[55]"
         style={{
-          opacity: useTransform(scrollProgress, [0, 0.15, 0.3], [1, 0.6, 0])
+          opacity: useTransform(scrollProgress, [0, 0.15, 0.3], [1, 0.6, 0]),
         }}
       >
-        {/* <p className="text-black text-sm sm:text-base md:text-lg font-light tracking-wider opacity-60">
-          The journey continues...
-        </p> */}
+        {/* Scroll hint text commented out as per original */}
       </motion.div>
     </div>
   );
