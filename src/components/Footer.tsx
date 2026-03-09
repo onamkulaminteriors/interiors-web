@@ -78,7 +78,7 @@ const Footer = memo(() => {
 
                 <div className="mt-8 lg:mt-10">
                   <p className="text-gray-400 text-sm lg:text-base xl:text-base 2xl:text-lg">
-                    (099) 791-00-75
+                    +91-9447420040
                   </p>
                 </div>
               </div>
