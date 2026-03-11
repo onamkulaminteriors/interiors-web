@@ -2,20 +2,25 @@
 
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { useMotionValue } from "framer-motion";
+import dynamic from "next/dynamic";
+
+// --- ABOVE FOLD: Eagerly loaded (needed on first paint) ---
 import Preloader from "../components/Preloader";
 import Hero from "../components/Hero";
 import FloatingNavbar from "../components/FloatingNavbar";
-import Achievements from "../components/Achievements";
-import ExclusiveBrands from "../components/partnersSection";
-import TestimonialScroll from "../components/Testimonials";
-import ServicesScroll from "../components/Services";
-import Quote from "../components/Quote";
-import ServicesShowcase from "../components/ServicesShowcase";
-import Founder from "../components/Founder";
-import Team from "../components/Team";
-import CTASection from "../components/CTASection";
-import LatestProjects from "../components/LatestProjects";
-import Footer from "../components/Footer";
+
+// --- BELOW FOLD: Lazy loaded (only bundled when rendered) ---
+const Achievements = dynamic(() => import("../components/Achievements"), { ssr: false });
+const ExclusiveBrands = dynamic(() => import("../components/partnersSection"), { ssr: false });
+const TestimonialScroll = dynamic(() => import("../components/Testimonials"), { ssr: false });
+const ServicesScroll = dynamic(() => import("../components/Services"), { ssr: false });
+const Quote = dynamic(() => import("../components/Quote"), { ssr: false });
+const ServicesShowcase = dynamic(() => import("../components/ServicesShowcase"), { ssr: false });
+const Founder = dynamic(() => import("../components/Founder"), { ssr: false });
+const Team = dynamic(() => import("../components/Team"), { ssr: false });
+const CTASection = dynamic(() => import("../components/CTASection"), { ssr: false });
+const LatestProjects = dynamic(() => import("../components/LatestProjects"), { ssr: false });
+const Footer = dynamic(() => import("../components/Footer"), { ssr: false });
 
 // --- STYLES ---
 const layerStyle: React.CSSProperties = {

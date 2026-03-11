@@ -9,32 +9,32 @@ const projects = [
     id: 1,
     name: "The Artisan Loft",
     role: "Modern Minimalist Living",
-    image: "/projects/project-1.png",
+    image: "/projects/project-1.webp",
   },
   {
     id: 2,
     name: "Marble & Oak Estate",
     role: "Luxury Kitchen Design",
-    image: "/projects/project-2.png",
+    image: "/projects/project-2.webp",
   },
   {
     id: 3,
     name: "Serenity Haven",
     role: "Master Bedroom Retreat",
-    image: "/projects/project-3.png",
+    image: "/projects/project-3.webp",
   },
   {
     id: 4,
     name: "The Golden Sanctuary",
     role: "High-End Bath Design",
-    image: "/projects/project-4.png",
+    image: "/projects/project-4.webp",
     quote: "Creating private oases with unparalleled luxury and elegance.",
   },
   {
     id: 5,
     name: "The Executive Library",
     role: "Sophisticated Home Office",
-    image: "/projects/project-5.png",
+    image: "/projects/project-5.webp",
   },
 ];
 

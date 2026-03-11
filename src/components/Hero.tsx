@@ -1,7 +1,7 @@
 import React, { memo } from 'react'; // Import memo
 import Image from 'next/image';
 import logo from '../assets/images/LOGO 01.png';
-import heroImage from '../assets/hero/hero-image2.png';
+import heroImage from '../assets/hero/hero-image2.webp';
 
 interface HeroProps {
   onExploreClick?: () => void;

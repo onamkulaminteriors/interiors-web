@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // Gzip/Brotli compress all responses (JS, CSS, HTML)
+    compress: true,
+
+    // Don't expose the Next.js version in response headers
+    poweredByHeader: false,
+
     images: {
         // Serve modern formats: AVIF (smallest) → WebP → original
         formats: ['image/avif', 'image/webp'],

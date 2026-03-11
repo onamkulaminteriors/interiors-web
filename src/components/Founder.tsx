@@ -1,12 +1,6 @@
 import Image from 'next/image';
 import founderImg from "../assets/images/founder.png";
 import signatureImg from "../assets/images/signature.png";
-import { Poppins } from 'next/font/google';
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700']
-});
 
 interface FounderData {
   id: number;
@@ -48,7 +42,7 @@ const Founder = () => {
           </div>
 
           {/* Content */}
-          <div className={`flex flex-col text-left space-y-4 w-full ${poppins.className} pt-4 lg:pt-8`}>
+          <div className="flex flex-col text-left space-y-4 w-full pt-4 lg:pt-8">
 
             {/* Heading */}
             <div className="mb-4">

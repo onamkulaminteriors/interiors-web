@@ -4,7 +4,7 @@ import '../index.css';
 
 const poppins = Poppins({
     subsets: ['latin'],
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    weight: ['300', '400', '600', '700'],
     variable: '--font-poppins',
     display: 'swap',
 });
@@ -90,6 +90,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+            </head>
             <body className={poppins.className}>{children}</body>
         </html>
     );

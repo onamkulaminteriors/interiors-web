@@ -4,7 +4,7 @@ const Footer = memo(() => {
   return (
     // FIX: Enabled internal scrolling for mobile (overflow-y-auto)
     // and enabled for desktop in case of small height
-    <div className="relative w-full min-h-screen bg-black">
+    <div className="relative w-full h-screen bg-black overflow-y-auto">
 
       {/* Background Pattern/Texture */}
       <div className="absolute inset-0 opacity-10">

@@ -21,7 +21,7 @@ const Team = () => {
       position: "Principal Interior Designer",
       quote: "Creating spaces that tell a story. We blend modern elegance with timeless comfort in every home.",
       description: "Sarah brings over a decade of luxury residential design experience to create tailored, breathtaking interiors.",
-      image: "/team/member-1.png"
+      image: "/team/member-1.webp"
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ const Team = () => {
       position: "Lead Interior Architect",
       quote: "Form follows function, but aesthetic never has to be compromised. Every blueprint is a work of art.",
       description: "Marcus specializes in spatial planning and architectural detailing, ensuring structural brilliance in our designs.",
-      image: "/team/member-2.png"
+      image: "/team/member-2.webp"
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Team = () => {
       position: "Project & Sourcing Manager",
       quote: "Perfection is delivered through meticulous planning and sourcing the finest materials from around the globe.",
       description: "Elena coordinates our complex renovations and curates bespoke furniture pieces for our exclusive clientele.",
-      image: "/team/member-3.png"
+      image: "/team/member-3.webp"
     },
   ];
 
