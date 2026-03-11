@@ -2,9 +2,7 @@ import React, { memo } from 'react';
 
 const Footer = memo(() => {
   return (
-    // FIX: Enabled internal scrolling for mobile (overflow-y-auto)
-    // and enabled for desktop in case of small height
-    <div className="relative w-full h-screen bg-black overflow-y-auto">
+    <div className="relative w-full h-screen bg-black overflow-y-auto lg:overflow-hidden">
 
       {/* Background Pattern/Texture */}
       <div className="absolute inset-0 opacity-10">
@@ -16,8 +14,7 @@ const Footer = memo(() => {
       </div>
 
       {/* Main Content Wrapper */}
-      {/* FIX: Added pt-28 for mobile navbar clearance, reset on desktop with lg:pt-0 */}
-      <div className="relative z-10 h-auto min-h-full flex flex-col justify-center pt-28 lg:pt-0">
+      <div className="relative z-10 flex flex-col justify-start lg:justify-center lg:h-full pt-28 lg:pt-0">
 
         {/* Top Section */}
         <div className="px-8 lg:px-16 xl:px-20 pt-12 pb-10 lg:pt-16 xl:pt-12">
@@ -127,7 +124,7 @@ const Footer = memo(() => {
 
         {/* Mobile Copyright */}
         {/* Added pb-12 for final scroll buffer */}
-        <div className="lg:hidden px-8 pb-12">
+        <div className="lg:hidden px-8 pb-24">
           <div className="flex flex-wrap items-center gap-4 text-gray-500 text-sm mb-2">
             <span>© All rights Reserved</span>
             <span>Privacy policy</span>
