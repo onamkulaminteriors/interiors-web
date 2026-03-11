@@ -97,10 +97,10 @@ export default function HomePage() {
         const founderStart = servicesShowcaseDisplayEnd;
         const founderDisplayEnd = founderStart + sectionDurationVal + displayDurationVal;
 
-        const teamStart = founderDisplayEnd;
-        const teamDisplayEnd = teamStart + sectionDurationVal + displayDurationVal;
+        // const teamStart = founderDisplayEnd;
+        // const teamDisplayEnd = teamStart + sectionDurationVal + displayDurationVal;
 
-        const ctaStart = teamDisplayEnd;
+        const ctaStart = founderDisplayEnd; // Team commented out — CTA follows Founder directly
         const ctaDisplayEnd = ctaStart + sectionDurationVal + displayDurationVal;
 
         const latestProjectsStart = ctaDisplayEnd;
@@ -217,13 +217,13 @@ export default function HomePage() {
             updateEl('founder', calculateOffset(founderStart), scrollY >= founderStart && scrollY < founderDisplayEnd + sectionDurationVal, 70);
             scrollTargets.current.about = founderStart + sectionDurationVal;
 
-            // 9. TEAM
-            const teamStart = founderDisplayEnd;
-            const teamDisplayEnd = teamStart + sectionDurationVal + displayDurationVal;
-            updateEl('team', calculateOffset(teamStart), scrollY >= teamStart && scrollY < teamDisplayEnd + sectionDurationVal, 80);
+            // // 9. TEAM (commented out)
+            // const teamStart = founderDisplayEnd;
+            // const teamDisplayEnd = teamStart + sectionDurationVal + displayDurationVal;
+            // updateEl('team', calculateOffset(teamStart), scrollY >= teamStart && scrollY < teamDisplayEnd + sectionDurationVal, 80);
 
-            // 10. CTA (Start of CONTACT)
-            const ctaStartVal = teamDisplayEnd;
+            // 10. CTA (Start of CONTACT) — follows Founder directly
+            const ctaStartVal = founderDisplayEnd;
             const ctaDisplayEnd = ctaStartVal + sectionDurationVal + displayDurationVal;
             updateEl('cta', calculateOffset(ctaStartVal), scrollY >= ctaStartVal && scrollY < ctaDisplayEnd + sectionDurationVal, 90);
             scrollTargets.current.cta = ctaStartVal;
@@ -384,10 +384,10 @@ export default function HomePage() {
                         <Founder />
                     </div>
 
-                    {/* TEAM */}
-                    <div className="bg-gray-50" ref={(el) => { sectionsRef.current['team'] = el; }} style={layerStyle} id="team">
+                    {/* TEAM — commented out */}
+                    {/* <div className="bg-gray-50" ref={(el) => { sectionsRef.current['team'] = el; }} style={layerStyle} id="team">
                         <Team />
-                    </div>
+                    </div> */}
 
                     {/* CTA */}
                     <div ref={(el) => { sectionsRef.current['cta'] = el; }} style={layerStyle} id="cta">
