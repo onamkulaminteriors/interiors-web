@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import founderImg from "../assets/images/founder.png";
-import signatureImg from "../assets/images/signature.png";
+// import signatureImg from "../assets/images/signature.png";
+import signatureImg from "../assets/images/signature_1.png";
 
 interface FounderData {
   id: number;
