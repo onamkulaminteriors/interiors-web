@@ -162,7 +162,7 @@ const ServicesShowcase = () => {
         {/* Mobile & Tablet Layout */}
         <div className="lg:hidden h-full flex flex-col">
           {/* Service Navigation */}
-          <div className="bg-stone-50 flex-1 px-4 sm:px-6 md:px-8 py-8 overflow-y-auto">
+          <div className="bg-stone-50 flex-1 px-4 sm:px-6 md:px-8 pt-28 sm:pt-32 pb-8 lg:pt-8 lg:pb-8 overflow-y-auto">
             <div className="space-y-3 sm:space-y-4 mb-6">
               {services.map((service, index) => (
                 <div
