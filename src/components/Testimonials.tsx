@@ -116,7 +116,8 @@ const TestimonialCard = ({
             sizes="(max-width: 1024px) 100vw, 66vw"
             className="object-cover"
             priority={index === 0}
-            quality={90}
+            loading={index === 0 ? undefined : 'lazy'}
+            quality={80}
           />
         </motion.div>
 

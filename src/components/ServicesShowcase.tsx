@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 import one from '../assets/process/1.jpg';
 import two from '../assets/process/2.jpg';
@@ -13,54 +13,54 @@ const ServicesShowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number>(0);
   const [isUserInteracting, setIsUserInteracting] = useState<boolean>(false);
 
-  const services = [
+  const services: { id: string; title: string; description: string; image: StaticImageData; secondaryImage: string }[] = [
     {
       id: '01',
       title: 'Consultation & Vision',
       description: 'Your story begins with us listening. Our experts visit your space to understand your dreams, your needs, and the life you envision living there.',
-      image: one.src,
+      image: one,
       secondaryImage: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&h=800&fit=crop'
     },
     {
       id: '02',
       title: '3D Visualisation',
       description: 'This is where your vision takes shape. We create detailed 3D renders, allowing you to walk through your future home and make sure every detail is a part of your story.',
-      image: two.src,
+      image: two,
       secondaryImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=800&fit=crop'
     },
     {
       id: '03',
       title: 'Detailed Drawings & Approval',
       description: 'We turn your dream into a solid plan. Once you love every detail, we finalize the drawings and sign the contract, officially beginning the creation of your story.',
-      image: three.src,
+      image: three,
       secondaryImage: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&h=800&fit=crop'
     },
     {
       id: '04',
       title: 'Production & Quality Check',
       description: 'Behind the scenes, our skilled artisans begin to craft the elements of your home. Each piece is meticulously made in-house and passes a rigorous quality check, ensuring every detail is perfect for your story.',
-      image: four.src,
+      image: four,
       secondaryImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=800&fit=crop'
     },
     {
       id: '05',
       title: 'Installation & Unboxing',
       description: "The moment your story becomes a reality. Our professional team installs every piece with precision, transforming your space into the home you've always imagined.",
-      image: five.src,
+      image: five,
       secondaryImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=800&fit=crop'
     },
     {
       id: '06',
       title: 'Handover & Walk-through',
       description: 'This is your moment. We do a final walk-through with you to ensure every detail is just right before handing over the keys to your new home and all the warranty details.',
-      image: six.src,
+      image: six,
       secondaryImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=800&fit=crop'
     },
     {
       id: '07',
       title: 'Post-Handover Support',
       description: 'Breathe new life into existing spaces with our comprehensive renovation services. We specialize in updating and modernizing homes and commercial spaces while preserving their unique character and maximizing their potential.',
-      image: seven.src,
+      image: seven,
       secondaryImage: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=800&fit=crop'
     }
   ];
@@ -143,9 +143,11 @@ const ServicesShowcase = () => {
                       src={service.image}
                       alt={service.title}
                       fill
-                      sizes="60vw"
-                      loading={index === 0 ? 'eager' : 'lazy'}
-                      quality={80}
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      priority={index === 0}
+                      loading={index === 0 ? undefined : 'lazy'}
+                      quality={75}
+                      placeholder="blur"
                       className="object-cover"
                       style={{ backfaceVisibility: 'hidden' }}
                     />
@@ -199,9 +201,10 @@ const ServicesShowcase = () => {
                 src={services[hoveredIndex].image}
                 alt={services[hoveredIndex].title}
                 fill
-                sizes="100vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 60vw"
                 loading="lazy"
-                quality={80}
+                quality={75}
+                placeholder="blur"
                 className="object-cover transition-all duration-700 ease-out"
                 style={{ backfaceVisibility: 'hidden' }}
               />

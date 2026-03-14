@@ -44,7 +44,7 @@ const stats = {
 };
 
 // --- Reusable Card Component (Optimized) ---
-const ProjectCard = memo(({ project, heightClass, extraContent, delay, isVisible }: any) => {
+const ProjectCard = memo(({ project, heightClass, extraContent, delay, isVisible, priority }: any) => {
   return (
     <div
       className={`relative rounded-lg sm:rounded-xl overflow-hidden cursor-pointer group w-full ${heightClass} transition-all duration-700 ${delay} ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'
@@ -55,9 +55,10 @@ const ProjectCard = memo(({ project, heightClass, extraContent, delay, isVisible
         src={project.image}
         alt={project.name}
         fill
-        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 20vw"
-        loading="lazy"
-        quality={80}
+        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+        priority={priority}
+        loading={priority ? undefined : 'lazy'}
+        quality={75}
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
       />
 
@@ -151,6 +152,7 @@ const TeamSection = () => {
                   heightClass="h-32 sm:h-48 lg:h-40 xl:h-52"
                   delay="delay-[400ms]"
                   isVisible={isVisible}
+                  priority={true}
                 />
               </div>
 

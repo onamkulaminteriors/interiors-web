@@ -410,7 +410,8 @@ const ExclusiveBrandsComplete: React.FC<{ scrollProgress: MotionValue<number> }>
                       width={200}
                       height={100}
                       loading="lazy"
-                      quality={75}
+                      quality={60}
+                      sizes="(max-width: 640px) 91px, (max-width: 1024px) 126px, 154px"
                       className="max-w-[70%] max-h-[60%] w-auto h-auto object-contain"
                       style={{ mixBlendMode: 'multiply' }}
                     />
