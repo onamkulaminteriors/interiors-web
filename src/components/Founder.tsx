@@ -84,13 +84,13 @@ const Founder = () => {
             </div>
 
             {/* Signature */}
-            <div className="mt-1 ml-4 sm:ml-14 lg:ml-14 xl:ml-[4.5rem]">
+            <div className="mt-2 ml-4 sm:ml-14 lg:ml-14 xl:ml-[4.5rem]">
               <Image
                 src={signatureImg}
                 alt="Signature"
-                height={48}
-                className="w-20 sm:w-40 md:w-48 object-contain"
-                quality={75}
+                height={80}
+                className="w-32 sm:w-56 md:w-64 object-contain"
+                quality={85}
               />
             </div>
 
