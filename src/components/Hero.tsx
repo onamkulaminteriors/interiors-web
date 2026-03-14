@@ -2,6 +2,7 @@ import React, { memo } from 'react'; // Import memo
 import Image from 'next/image';
 import logo from '../assets/images/LOGO 01.png';
 import heroImage from '../assets/hero/hero-image2.webp';
+import heroMobileImage from '../assets/hero/hero-mobile.png';
 
 interface HeroProps {
   onExploreClick?: () => void;
@@ -11,14 +12,24 @@ interface HeroProps {
 const Hero = memo(({ onExploreClick }: HeroProps) => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-neutral-200">
-      {/* Background Image - priority ensures eager loading with a <link rel="preload"> */}
+      {/* Desktop Background Image */}
       <Image
         src={heroImage}
         alt=""
         fill
         priority
         quality={85}
-        className="object-cover object-center"
+        className="object-cover object-center hidden sm:block"
+        sizes="100vw"
+      />
+      {/* Mobile Background Image */}
+      <Image
+        src={heroMobileImage}
+        alt=""
+        fill
+        priority
+        quality={85}
+        className="object-cover object-center block sm:hidden"
         sizes="100vw"
       />
       {/* Dark overlay */}
