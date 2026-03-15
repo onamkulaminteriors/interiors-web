@@ -29,7 +29,7 @@ const Hero = memo(({ onExploreClick }: HeroProps) => {
         fill
         priority
         quality={85}
-        className="object-cover object-center block sm:hidden"
+        className="object-cover object-[30%_center] block sm:hidden"
         sizes="100vw"
       />
       {/* Dark overlay */}

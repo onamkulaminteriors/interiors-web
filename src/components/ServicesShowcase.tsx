@@ -160,42 +160,59 @@ const ServicesShowcase = () => {
         </div>
 
         {/* Mobile & Tablet Layout */}
-        <div className="lg:hidden h-full flex flex-col">
-          {/* Service Navigation */}
-          <div className="bg-stone-50 flex-1 px-4 sm:px-6 md:px-8 pt-28 sm:pt-32 pb-8 lg:pt-8 lg:pb-8 overflow-y-auto">
-            <div className="space-y-3 sm:space-y-4 mb-6">
-              {services.map((service, index) => (
-                <div
-                  key={service.id}
-                  className={`flex items-center gap-3 sm:gap-4 py-2 sm:py-3 cursor-pointer transition-all duration-300 ${hoveredIndex === index
-                    ? 'text-gray-800'
-                    : 'text-gray-400'
-                    }`}
-                  onClick={() => setHoveredIndex(index)}
-                >
-                  <div className="text-xs sm:text-sm font-light min-w-[1.5rem] sm:min-w-[2rem]">
-                    {service.id}
-                  </div>
+        <div className="lg:hidden h-full flex flex-col pt-20 sm:pt-30 pb-6 sm:pb-4 px-4 sm:px-6 md:px-8">
+          {/* Top content area */}
+          <div className="flex flex-col mt-5">
+            {/* Service Navigation */}
+            <div className="space-y-3 sm:space-y-4 mb-3 sm:mb-4">
+              {[0, 1, 2].map((offset) => {
+                const displayIndex = (hoveredIndex + offset) % services.length;
+                const service = services[displayIndex];
 
-                  <div className="flex-1">
-                    <h3 className="text-base sm:text-lg md:text-xl font-light">
-                      {service.title}
-                    </h3>
+                return (
+                  <div
+                    key={service.id}
+                    className={`flex items-center gap-3 sm:gap-4 py-2 sm:py-3 cursor-pointer transition-all duration-300 ${offset === 0
+                      ? 'text-gray-800'
+                      : 'text-gray-400 hover:text-gray-500'
+                      }`}
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && window.navigator && window.navigator.vibrate) {
+                        window.navigator.vibrate(20);
+                      }
+                      if (offset === 0) {
+                        // Advancing to the next item if the active one is clicked
+                        setHoveredIndex((hoveredIndex + 1) % services.length);
+                      } else {
+                        // Make the clicked item the active one at the top
+                        setHoveredIndex(displayIndex);
+                      }
+                    }}
+                  >
+                    <div className="text-xs sm:text-sm font-light min-w-[1.5rem] sm:min-w-[2rem]">
+                      {service.id}
+                    </div>
+
+                    <div className="flex-1">
+                      <h3 className="text-base sm:text-lg md:text-xl font-light">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Description for Mobile */}
-            <div className="max-w-none">
+            <div className="max-w-none mb-6 sm:mb-8">
               <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-light">
                 {services[hoveredIndex].description}
               </p>
             </div>
           </div>
 
-          {/* Image Display for Mobile */}
-          <div className="relative h-48 sm:h-64 md:h-80 bg-gray-100 p-4">
+          {/* Image Display for Mobile - Pushed to bottom */}
+          <div className="relative h-[40vh] min-h-[200px] max-h-[300px] w-full shrink-0">
             <div className="relative h-full w-full">
               <Image
                 src={services[hoveredIndex].image}
